@@ -1,0 +1,61 @@
+.services {
+  background: #ffffff;
+  color: #000000;
+  padding: 4rem 1rem;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services-header h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.services-header p {
+  font-size: 1rem;
+  color: #555555;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-item {
+  background: #f9f9f9; /* gris muy claro */
+  border: 1px solid #e0e0e0;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.service-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+/* Hover muy sutil */
+.service-item:hover {
+  border-color: #cfcfcf;
+  background: #f5f5f5;
+}
+.service-item h3::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #d4af37; /* dorado suave */
+  margin-top: 6px;
+}

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+.footer {
+  position: relative;
+  background: #111; /* fondo oscuro elegante */
+  color: #eaeaea;
+  padding: 3rem 1rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.footer-logo h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: goldenrod; /* resalta corporativo */
+  letter-spacing: 1.5px;
+}
+
+.footer-logo p {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #bbb;
+}
+
+/* Secciones */
+.footer-links h3,
+.footer-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.footer-links,
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Links */
+.footer-links a {
+  text-decoration: none;
+  color: #eaeaea;
+  font-weight: 400;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: goldenrod;
+  padding-left: 3px; /* efecto sutil */
+}
+
+/* Info */
+.footer-info p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  color: #888;
+}

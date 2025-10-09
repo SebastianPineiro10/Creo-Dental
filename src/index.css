@@ -1,0 +1,33 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Modo claro y color base */
+  color-scheme: light;
+  color: #000000;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Degradado dorado oscuro reutilizable */
+  --gold-dark-gradient: linear-gradient(
+    to right,
+    #2f1f08 0%,
+    #5a3b12 25%,
+    #b88a1a 50%,
+    #5a3b12 75%,
+    #2f1f08 100%
+  );
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #ffffff; /* aseguramos fondo blanco */
+  color: #000000;
+}
