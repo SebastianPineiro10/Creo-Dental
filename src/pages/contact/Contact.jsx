@@ -1,5 +1,5 @@
 // Contact.jsx
-import "./Contact.css";
+import "./contact.css";
 import { useEffect, useState } from "react";
 import { FaWhatsapp, FaFacebookF, FaEnvelope } from "react-icons/fa";
 

@@ -1,4 +1,4 @@
-import "./Services.css";
+import "./services.css";
 
 const servicesData = [
   { title: "Limpieza Dental", description: "Eliminamos placa y sarro cuidando de tus encías." },
