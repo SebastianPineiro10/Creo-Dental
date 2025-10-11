@@ -224,3 +224,131 @@
   opacity: 0.9;
   z-index: 3;
 }
+/* ===============================
+   Botón "Ver más / Ver menos"
+================================ */
+.ver-mas-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: #b8860b;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.ver-mas-btn:hover {
+  color: #daa520;
+}
+
+/* Efecto de acordeón limpio */
+.collapsed {
+  max-height: 7.5rem;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.expanded {
+  max-height: 1000px;
+  transition: max-height 0.6s ease;
+}
+/* ===============================
+   Mejora visual mobile — estilo Casa Ojiva
+================================ */
+@media (max-width: 768px) {
+  .mvv-section {
+    padding: 6rem 1.6rem;
+    background: #fff; /* más limpio en mobile */
+  }
+
+  .mvv-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .mvv-header h2 {
+    font-size: 1.7rem;
+    letter-spacing: 3px;
+    color: #b8860b;
+  }
+
+  .mvv-header p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Grid vertical elegante */
+  .mvv-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  /* Tarjetas estilo editorial */
+  .mvv-card {
+    padding: 2.2rem 1.6rem;
+    border-radius: 10px;
+    border: 1px solid rgba(218,165,32,0.4);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+
+  .mvv-card h3 {
+    font-size: 1.25rem;
+    color: #b8860b;
+    margin-bottom: 1rem;
+    border: none;
+    letter-spacing: 1.5px;
+  }
+
+  .mvv-card p, 
+  .mvv-card ul {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #333;
+  }
+
+  .mvv-card ul {
+    padding: 0;
+  }
+
+  .mvv-card li {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .mvv-card strong {
+    display: block;
+    color: #b8860b;
+    margin-bottom: 0.2rem;
+  }
+
+  /* Botón "Ver más" más limpio */
+  .ver-mas-btn {
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+/* ===============================
+   Efecto Scroll Reveal Suave
+================================ */
+.mvv-card {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.mvv-card.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efecto escalonado opcional para elegancia */
+.mvv-card:nth-child(1) { transition-delay: 0.1s; }
+.mvv-card:nth-child(2) { transition-delay: 0.3s; }
+.mvv-card:nth-child(3) { transition-delay: 0.5s; }

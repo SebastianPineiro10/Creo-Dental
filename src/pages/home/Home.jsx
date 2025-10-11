@@ -1,6 +1,23 @@
+import { useEffect } from "react"
 import "./home.css";
 
+
 function Home() {
+   useEffect(() => {
+    const cards = document.querySelectorAll(".mvv-card");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal");
+          observer.unobserve(entry.target); // Evita reanimarlas si ya se mostraron
+        }
+      });
+    });
+
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
   return (
     <>
       {/* HERO */}
@@ -15,7 +32,7 @@ function Home() {
             Clínica de Rehabilitación Estética Oral. Tratamientos para niños y adultos en un ambiente cálido y profesional.
           </p>
           <a
-            href="https://wa.me/524420000000?text=Hola,%20quiero%20agendar%20una%20cita%20en%20Creo%20Dental"
+            href="https://wa.me/526563116130?text=Hola, me interesa agendar una cita en la clínica Creo Dental"
             className="btn-gold fade-in delay-2"
             target="_blank"
             rel="noopener noreferrer"
@@ -71,3 +88,4 @@ function Home() {
 }
 
 export default Home;
+
