@@ -352,3 +352,17 @@
 .mvv-card:nth-child(1) { transition-delay: 0.1s; }
 .mvv-card:nth-child(2) { transition-delay: 0.3s; }
 .mvv-card:nth-child(3) { transition-delay: 0.5s; }
+
+/* ===============================
+   Ajuste visual — Hero alineado al Navbar Sticky
+================================ */
+.hero {
+  margin-top: -80px; /* compensa la altura del navbar */
+}
+
+/* Ajuste responsivo si el navbar cambia de tamaño */
+@media (max-width: 768px) {
+  .hero {
+    margin-top: -70px;
+  }
+}
