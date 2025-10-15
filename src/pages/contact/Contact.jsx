@@ -1,63 +1,104 @@
-// Contact.jsx
-import "./contact.css";
+import "./Contact.css";
 import { useEffect, useState } from "react";
-import { FaWhatsapp, FaFacebookF, FaEnvelope } from "react-icons/fa";
+import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
 
 function Contact() {
-  const [borderAnimated, setBorderAnimated] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setBorderAnimated(true), 100);
+    const timer = setTimeout(() => setFadeIn(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <section className="contact">
-      <div className="contact-wrapper">
-        <div className={`contact-card ${borderAnimated ? "animate-border" : ""}`}>
-          <h2 className="contact-title">Sucursal Ciudad Juárez</h2>
-          <p className="contact-subtitle">Estamos para ayudarte. Escríbenos o visítanos.</p>
+    <section className={`contact-section ${fadeIn ? "fade-in" : ""}`}>
+      <div className="contact-container">
+        <header className="contact-header">
+          <h1>Contáctanos</h1>
+          <p>
+            Encuentra la clínica más cercana y agenda tu cita. En Creo Dental, te
+            esperamos con atención profesional y personalizada.
+          </p>
+        </header>
 
-          <div className="contact-item">
-            <span className="label">Dirección:</span>
-            <span className="value">Av. Benito Juárez 456, Ciudad Juárez, Chihuahua</span>
-          </div>
+        {/* --- GRID CON DOS CLÍNICAS --- */}
+        <div className="clinics-grid">
+          {/* -------- CLÍNICA JUÁREZ -------- */}
+          <div className="contact-card">
+            <h2>Creo Dental Juárez</h2>
 
-          <div className="contact-item">
-            <span className="label">Teléfono:</span>
-            <span className="value">+52 656 123 4567</span>
-          </div>
+            <div className="info-row">
+              <MapPin size={18} strokeWidth={1.5} />
+              <div>
+                <h3>Dirección</h3>
+                <p>Av. Juárez 315 — Ciudad Juárez, Chihuahua</p>
+              </div>
+            </div>
 
-          <div className="contact-item">
-            <span className="label">Email:</span>
-            <span className="value">contacto@clinicajrz.com</span>
-          </div>
+            <div className="info-row">
+              <Phone size={18} strokeWidth={1.5} />
+              <div>
+                <h3>Teléfonos</h3>
+                <p>656 311 6130 / 915 875 2441</p>
+              </div>
+            </div>
 
-          <div className="social-icons">
+            <div className="info-row">
+              <Clock size={18} strokeWidth={1.5} />
+              <div>
+                <h3>Horarios</h3>
+                <p>Lunes a Sábado: 9 AM – 6 PM</p>
+                <p>Domingo: 10 AM – 4 PM</p>
+              </div>
+            </div>
+
             <a
-              href="https://wa.me/526561234567?text=Hola,%20quisiera%20más%20información"
+              href="https://wa.me/526563116130?text=Hola,%20me%20interesa%20agendar%20una%20cita%20en%20Creo%20Dental%20Juárez"
               target="_blank"
               rel="noopener noreferrer"
-              className="tooltip"
-              data-tooltip="WhatsApp"
+              className="btn-whatsapp"
             >
-              <FaWhatsapp />
+              <MessageCircle size={18} strokeWidth={1.5} />
+              Agendar por WhatsApp
             </a>
+          </div>
+
+          {/* -------- CLÍNICA AMÉRICAS -------- */}
+          <div className="contact-card">
+            <h2>Creo Dental Américas</h2>
+
+            <div className="info-row">
+              <MapPin size={18} strokeWidth={1.5} />
+              <div>
+                <h3>Dirección</h3>
+                <p>Ignacio Zaragoza 2873 — Ciudad Juárez, Chihuahua</p>
+              </div>
+            </div>
+
+            <div className="info-row">
+              <Phone size={18} strokeWidth={1.5} />
+              <div>
+                <h3>Teléfono</h3>
+                <p>656 418 9051</p>
+              </div>
+            </div>
+
+            <div className="info-row">
+              <Clock size={18} strokeWidth={1.5} />
+              <div>
+                <h3>Horarios</h3>
+                <p>10 AM – 6 PM (Solo con cita previa)</p>
+              </div>
+            </div>
+
             <a
-              href="https://facebook.com/clinicajrz"
+              href="https://wa.me/526564189051?text=Hola,%20me%20interesa%20agendar%20una%20cita%20en%20Creo%20Dental%20Américas"
               target="_blank"
               rel="noopener noreferrer"
-              className="tooltip"
-              data-tooltip="Facebook"
+              className="btn-whatsapp"
             >
-              <FaFacebookF />
-            </a>
-            <a
-              href="mailto:contacto@clinicajrz.com"
-              className="tooltip"
-              data-tooltip="Email"
-            >
-              <FaEnvelope />
+              <MessageCircle size={18} strokeWidth={1.5} />
+              Agendar por WhatsApp
             </a>
           </div>
         </div>

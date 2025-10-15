@@ -1,174 +1,185 @@
-:root {
-  /* Gradiente dorado oscuro corporativo reutilizable */
-  --gold-dark-gradient: linear-gradient(
-    to right,
-    #2f1f08 0%,
-    #5a3b12 25%,
-    #bfa046 50%,
-    #5a3b12 75%,
-    #2f1f08 100%
-  );
+.contact-section {
+  font-family: "Montserrat", sans-serif;
+  background: #fff;
+  color: #1a1a1a;
+  padding: 3.5rem 2rem  4rem;
+  opacity: 0;
+  filter: blur(6px);
+  transition: opacity 1.2s ease, filter 1.2s ease;
 }
 
-/* ===== SECCIÓN GENERAL ===== */
-.contact {
-  background: #fdfdfd;
-  padding: 6rem 1rem;
+.contact-section.fade-in {
+  opacity: 1;
+  filter: blur(0);
 }
 
-.contact-wrapper {
-  max-width: 900px;
+/* ---------- CONTENEDOR GENERAL ---------- */
+.contact-container {
+  max-width: 1100px;
   margin: 0 auto;
+  animation: rise-fade 1.3s ease both;
+}
+
+/* ---------- CABECERA ---------- */
+.contact-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fade-up 1.2s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.contact-header h1 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #111;
+  margin: 1px;
+}
+
+.contact-header p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.4rem;
+  max-width: 600px;
+  margin-inline: auto;
+  line-height: 1.5;
+}
+
+/* ---------- GRID DE CLÍNICAS ---------- */
+.clinics-grid {
   display: flex;
   justify-content: center;
-}
-
-/* ===== TARJETA DE CONTACTO ===== */
-.contact-card {
-  position: relative;
-  border: 1px solid #bfa046;
-  padding: 3rem;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
-  width: 100%;
-  transition: box-shadow 0.3s ease;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/* Contenido sobre el efecto */
-.contact-card > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* ===== EFECTO BORDE ANIMADO - tipo "pez en túnel" ===== */
-.contact-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  background: var(--gold-dark-gradient);
+  align-items: stretch;
+  gap: 3rem;
+  flex-wrap: wrap;
   opacity: 0;
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: trace-border 2.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-  padding: 1px;
-
-  /* Máscara para el efecto hueco */
-  mask: linear-gradient(#000 0 0);
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  animation: fade-in-cards 1.3s ease forwards;
+  animation-delay: 0.5s;
 }
 
-/* ===== ANIMACIÓN DEL RECORRIDO ===== */
-@keyframes trace-border {
-  0% {
-    clip-path: inset(100% 100% 0% 0%);
-    opacity: 0;
-  }
-  25% {
-    clip-path: inset(0% 100% 0% 0%);
-    opacity: 0.7;
-  }
-  50% {
-    clip-path: inset(0% 0% 0% 100%);
-    opacity: 0.9;
-  }
-  75% {
-    clip-path: inset(0% 0% 100% 0%);
-    opacity: 1;
-  }
-  100% {
-    clip-path: inset(0% 0% 0% 0%);
-    opacity: 1;
-  }
+/* ---------- TARJETA DE CONTACTO ---------- */
+.contact-card {
+  flex: 1;
+  min-width: 330px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(0);
+  animation: fade-card 1.2s ease forwards;
 }
 
-/* ===== CONTENIDO INTERNO ===== */
-.contact-title {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  color: #111;
-  letter-spacing: 0.5px;
+.contact-card:nth-child(1) {
+  animation-delay: 0.6s;
 }
 
-.contact-subtitle {
-  font-size: 1rem;
+.contact-card:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
+/* Hover solo cambia la sombra, no levanta */
+.contact-card:hover {
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- TÍTULO ---------- */
+.contact-card h2 {
+  font-size: 1.4rem;
+  color: #b9935a;
+  font-weight: 500;
   margin-bottom: 2rem;
-  color: #555;
+  letter-spacing: 0.3px;
 }
 
-.contact-item {
+/* ---------- INFO ---------- */
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.label {
-  display: block;
-  font-weight: 600;
-  color: #222;
+.info-row h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #b9935a;
   margin-bottom: 0.3rem;
 }
 
-.value {
-  color: #444;
+.info-row p {
   font-size: 0.95rem;
+  color: #333;
+  margin: 0.15rem 0;
+  line-height: 1.4;
 }
 
-/* ===== REDES SOCIALES ===== */
-.social-icons {
-  display: flex;
-  gap: 1.2rem;
-  margin-top: 2rem;
-}
-
-.tooltip {
-  position: relative;
-  color: #111;
-  font-size: 1.4rem;
-  transition: color 0.3s ease;
-}
-
-.tooltip:hover {
-  color: #bfa046;
-}
-
-/* Tooltip */
-.tooltip::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: -1.8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #111;
+/* ---------- BOTÓN WHATSAPP ---------- */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #b9935a;
   color: #fff;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  padding: 0.9rem 1.6rem;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-top: 1.2rem;
 }
 
-.tooltip:hover::after {
-  opacity: 1;
+.btn-whatsapp:hover {
+  background: #a6824c;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .contact-card {
-    padding: 2rem;
+/* ---------- ANIMACIONES ---------- */
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-/* ===== Solo activa la animación cuando tiene la clase animate-border ===== */
-.contact-card.animate-border::before {
-  opacity: 1;
-  transform: scaleX(1);
-  animation: trace-border 2.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+
+@keyframes fade-in-cards {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Tarjetas solo hacen fade-in, sin levantarse */
+@keyframes fade-card {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .clinics-grid {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .contact-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .contact-header h1 {
+    font-size: 2rem;
+  }
 }
