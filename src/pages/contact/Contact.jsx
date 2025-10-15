@@ -1,4 +1,4 @@
-import "./Contact.css";
+import "./contact.css";
 import { useEffect, useState } from "react";
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
 
