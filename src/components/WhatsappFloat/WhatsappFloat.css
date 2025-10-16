@@ -1,0 +1,140 @@
+:root {
+  --wb-size: 58px;
+  --wb-gold: #d4af37;
+  --wb-black: #0e0e0e;
+  --wb-white: #fdfdfd;
+  --wb-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+  --wb-tooltip-bg: #121212;
+  --wb-tooltip-color: #f5f5f5;
+}
+
+/* --- Contenedor principal --- */
+.whatsapp-float {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--wb-size);
+  height: var(--wb-size);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #1a1a1a 0%, #0e0e0e 85%);
+  border: 2px solid var(--wb-gold);
+  box-shadow: var(--wb-shadow);
+  transition: all 0.3s ease;
+  overflow: visible;
+}
+
+/* --- Posición --- */
+.wb-left { left: 22px; }
+.wb-right { right: 22px; }
+
+/* --- Ícono --- */
+.wb-icon {
+  width: calc(var(--wb-size) - 10px);
+  height: calc(var(--wb-size) - 10px);
+  object-fit: contain;
+  z-index: 3;
+  filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.25));
+}
+
+/* --- Aro blanco elegante --- */
+.wb-outline {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 25px rgba(212, 175, 55, 0.3);
+  z-index: 1;
+  animation: wbOutlinePulse 4.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* --- Halo dorado --- */
+.wb-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  animation: wbRingPulse 3.8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* --- Brillo difuso --- */
+.wb-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.2),
+    0 0 22px rgba(212, 175, 55, 0.3);
+  opacity: 0.5;
+  animation: wbGlow 5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Animaciones --- */
+@keyframes wbOutlinePulse {
+  0%,100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+@keyframes wbRingPulse {
+  0%,100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes wbGlow {
+  0% { opacity: 0.3; filter: brightness(1); }
+  50% { opacity: 0.6; filter: brightness(1.25); }
+  100% { opacity: 0.3; filter: brightness(1); }
+}
+
+/* --- Hover --- */
+.whatsapp-float:hover {
+  transform: translateY(-2px);
+  background: radial-gradient(circle at 30% 30%, #1b1b1b 0%, #080808 100%);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.25),
+    0 0 28px rgba(212, 175, 55, 0.4);
+}
+
+/* --- Tooltip --- */
+.wb-tooltip {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--wb-tooltip-bg);
+  color: var(--wb-tooltip-color);
+  padding: 8px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--wb-gold);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+.whatsapp-float:hover .wb-tooltip {
+  opacity: 1;
+  transform: translate(4px, -50%);
+}
+
+/* --- Accesibilidad --- */
+@media (prefers-reduced-motion: reduce) {
+  .wb-outline, .wb-ring, .wb-glow {
+    animation: none;
+  }
+}
+
+/* --- Responsive --- */
+@media (max-width: 380px) {
+  :root { --wb-size: 50px; }
+}

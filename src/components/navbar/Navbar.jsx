@@ -29,7 +29,6 @@ function Navbar() {
         </div>
 
         <ul className="navbar-links">
-          <li><Link to="/">Inicio</Link></li>
           <li><Link to="/services">Servicios</Link></li>
 
           <li

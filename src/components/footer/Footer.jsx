@@ -22,9 +22,9 @@ function Footer() {
         {/* Información */}
         <div className="footer-info">
           <h3>Contacto</h3>
-          <p>Av. Ejemplo 123, Juarez</p>
-          <p>+52 000 00 00</p>
-          <p>contacto@creodental.com</p>
+          <p>Av. Juarez 315</p>
+          <p>6563116130 / 9158752441</p>
+          <p>creodental122@gmail.com</p>
         </div>
       </div>
 
