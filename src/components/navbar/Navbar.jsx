@@ -1,10 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import "./navbar.css";
 
 function Navbar() {
   const location = useLocation();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   let closeTimeout;
   const handleMouseEnter = () => {
@@ -15,9 +17,15 @@ function Navbar() {
     closeTimeout = setTimeout(() => setIsDropdownOpen(false), 120);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    document.body.style.overflow = isMenuOpen ? "auto" : "hidden"; // evita scroll al abrir menú
+  };
+
   return (
     <nav className="navbar" key={location.pathname}>
       <div className="navbar-container">
+        {/* ---------- LOGO ---------- */}
         <div className="navbar-logo">
           <Link to="/">
             <img
@@ -28,6 +36,7 @@ function Navbar() {
           </Link>
         </div>
 
+        {/* ---------- LINKS DESKTOP ---------- */}
         <ul className="navbar-links">
           <li><Link to="/services">Servicios</Link></li>
 
@@ -37,7 +46,6 @@ function Navbar() {
             onMouseLeave={handleMouseLeave}
           >
             <span className="dropdown-toggle">Sucursales ▾</span>
-
             {isDropdownOpen && (
               <div className="dropdown-menu">
                 <Link to="/sucursal/juarez" className="dropdown-item">
@@ -51,6 +59,23 @@ function Navbar() {
           </li>
 
           <li><Link to="/contact">Contacto</Link></li>
+        </ul>
+
+        {/* ---------- BOTÓN HAMBURGUESA ---------- */}
+        <button className="menu-toggle" onClick={toggleMenu} aria-label="Menú">
+          {isMenuOpen ? <X size={28} color="goldenrod" /> : <Menu size={28} color="goldenrod" />}
+        </button>
+      </div>
+
+      {/* ---------- MENÚ MÓVIL ---------- */}
+      <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
+        <ul>
+          <li><Link to="/" onClick={toggleMenu}>Inicio</Link></li>
+          <li><Link to="/services" onClick={toggleMenu}>Servicios</Link></li>
+          <li><Link to="/sucursal/juarez" onClick={toggleMenu}>Clínica Juárez</Link></li>
+          <li><Link to="/sucursal/americas" onClick={toggleMenu}>Clínica Américas</Link></li>
+          <li><Link to="/contact" onClick={toggleMenu}>Contacto</Link></li>
+          <li><a href="https://wa.me/526563116130" target="_blank" onClick={toggleMenu}>WhatsApp</a></li>
         </ul>
       </div>
     </nav>

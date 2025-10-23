@@ -37,7 +37,7 @@ function App() {
           }
         />
 
-        {/* 🔴 SERVICES -> sin botón */}
+        {/* SERVICES -> sin botón */}
         <Route
           path="/services"
           element={
@@ -47,7 +47,7 @@ function App() {
           }
         />
 
-        {/* 🔴 CONTACT -> sin botón */}
+        {/* CONTACT -> sin botón */}
         <Route
           path="/contact"
           element={
@@ -57,7 +57,7 @@ function App() {
           }
         />
 
-        {/* 🟢 SUCURSAL JUÁREZ -> muestra botón */}
+        {/* SUCURSAL JUÁREZ -> muestra botón */}
         <Route
           path="/sucursal/juarez"
           element={
@@ -71,7 +71,7 @@ function App() {
           }
         />
 
-        {/* 🟢 SUCURSAL AMÉRICAS -> muestra botón */}
+        {/* SUCURSAL AMÉRICAS -> muestra botón */}
         <Route
           path="/sucursal/americas"
           element={
