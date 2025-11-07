@@ -32,8 +32,8 @@ function Especialistas() {
         </div>
 
         <div className="especialista-card">
-          <img src="" alt="Dra. Chrystian Terrazas" />
-          <h3>Dra. Chrystian Terrazas</h3>
+          <img src="/fotos-doctores/4.jpg" alt="Dra. Chrystian Terrazas" />
+          <h3>Dra. Christian Terrazas</h3>
           <p>
             Soy especialista en estética dental, dedicada a transformar sonrisas a través de tratamientos como carillas, blanqueamientos y rejuvenecimiento dental. 
             En Creo Dental busco combinar técnica, estética y cuidado personalizado para que cada paciente se sienta seguro y satisfecho con los resultados, logrando 
@@ -42,7 +42,7 @@ function Especialistas() {
         </div>
 
         <div className="especialista-card">
-          <img src="/fotos-doctores/5.jpg" alt="Dra. Alejandra Valenzuela" />
+          <img src="/fotos-doctores/6.jpg" alt="Dra. Alejandra Valenzuela" />
           <h3>Dra. Alejandra Valenzuela</h3>
           <p>
           Soy especialista en ortodoncia y formo parte del equipo de Creo Dental. Mi misión es ayudarte a lograr una sonrisa alineada, funcional y estética, combinando 
@@ -53,7 +53,7 @@ function Especialistas() {
 
         {/* Equipo Clínico */}
         <div className="especialista-card">
-          <img src="/fotos-doctores/4.jpg" alt="Dra. Paulina Morlet" />
+          <img src="/fotos-doctores/5.jpg" alt="Dra. Paulina Morlet" />
           <h3>Dra. Paulina Morlet</h3>
           <p>
           Soy odontóloga general y formo parte del equipo de Creo Dental. Mi objetivo es brindar una atención integral, cuidando cada detalle 
@@ -63,7 +63,7 @@ function Especialistas() {
         </div>
 
         <div className="especialista-card">
-          <img src="/fotos-doctores/6.jpg" alt="Dra. Stephanie Ávalos" />
+          <img src="/fotos-doctores/1.jpg" alt="Dra. Stephanie Ávalos" />
           <h3>Dra. Stephanie Ávalos</h3>
           <p>
             Soy odontóloga general y formo parte del equipo de Creo Dental. Mi enfoque está en brindar una atención integral, cuidando tu salud bucal desde la prevención 

@@ -44,7 +44,7 @@
 
 /* ===== LOGO ===== */
 .logo-img {
-  height: 48px;
+  height: 68px;
   width: auto;
   object-fit: contain;
   transition: transform 0.35s ease;
