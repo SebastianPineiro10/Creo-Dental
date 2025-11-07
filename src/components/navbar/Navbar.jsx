@@ -19,7 +19,7 @@ function Navbar() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    document.body.style.overflow = isMenuOpen ? "auto" : "hidden"; // evita scroll al abrir menú
+    document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
   };
 
   return (
@@ -58,12 +58,19 @@ function Navbar() {
             )}
           </li>
 
+          {/* ---------- NUEVO ENLACE “ESPECIALISTAS” ---------- */}
+          <li><Link to="/especialistas">Especialistas</Link></li>
+
           <li><Link to="/contact">Contacto</Link></li>
         </ul>
 
         {/* ---------- BOTÓN HAMBURGUESA ---------- */}
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Menú">
-          {isMenuOpen ? <X size={28} color="goldenrod" /> : <Menu size={28} color="goldenrod" />}
+          {isMenuOpen ? (
+            <X size={28} color="goldenrod" />
+          ) : (
+            <Menu size={28} color="goldenrod" />
+          )}
         </button>
       </div>
 
@@ -74,8 +81,18 @@ function Navbar() {
           <li><Link to="/services" onClick={toggleMenu}>Servicios</Link></li>
           <li><Link to="/sucursal/juarez" onClick={toggleMenu}>Clínica Juárez</Link></li>
           <li><Link to="/sucursal/americas" onClick={toggleMenu}>Clínica Américas</Link></li>
+          <li><Link to="/especialistas" onClick={toggleMenu}>Especialistas</Link></li>
           <li><Link to="/contact" onClick={toggleMenu}>Contacto</Link></li>
-          <li><a href="https://wa.me/526563116130" target="_blank" onClick={toggleMenu}>WhatsApp</a></li>
+          <li>
+            <a
+              href="https://wa.me/526563116130"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={toggleMenu}
+            >
+              WhatsApp
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

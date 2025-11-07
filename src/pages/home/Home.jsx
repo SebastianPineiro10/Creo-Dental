@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { Helmet } from "react-helmet"; // 👈 Añade esto
+import { Helmet } from "react-helmet";
+import VideoCarousel from "../../components/Carrusel-videos/VideoCarousel.jsx";
 import "./home.css";
 
 function Home() {
@@ -46,6 +47,9 @@ function Home() {
           <p className="fade-in delay-1 arch-subtitle">
             Clínica de Rehabilitación Estética Oral. Tratamientos para niños y adultos en un ambiente cálido y profesional.
           </p>
+
+      
+
           <a
             href="https://wa.me/526563116130?text=Hola, me interesa agendar una cita en la clínica Creo Dental"
             className="btn-gold fade-in delay-2"
@@ -98,7 +102,12 @@ function Home() {
             </ul>
           </div>
         </div>
-      </section>
+      </section>    
+
+      {/* Carrusel insertado aquí */}
+     <div className="hero-carousel-wrapper">
+      <VideoCarousel />
+    </div>
     </>
   );
 }

@@ -5,13 +5,15 @@ import Home from "./pages/home/Home";
 import Services from "./pages/services/Services";
 import Contact from "./pages/contact/Contact";
 import WhatsappFloat from "./components/WhatsappFloat/WhatsappFloat.jsx";
-import { Link } from "react-router-dom";
 
 // Sucursales
 import SucursalJuarez from "./pages/sucursal-juarez/Juarez";
 import SucursalAmericas from "./pages/sucursal-americas/Americas";
 
-// Layout base que todos usan
+// Especialistas
+import Especialistas from "./pages/especialistas/Especialistas.jsx";
+
+// Layout base
 function MainLayout({ children }) {
   return (
     <>
@@ -26,7 +28,6 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* HOME -> sí muestra botón */}
         <Route
           path="/"
           element={
@@ -36,8 +37,6 @@ function App() {
             </MainLayout>
           }
         />
-
-        {/* SERVICES -> sin botón */}
         <Route
           path="/services"
           element={
@@ -46,8 +45,6 @@ function App() {
             </MainLayout>
           }
         />
-
-        {/* CONTACT -> sin botón */}
         <Route
           path="/contact"
           element={
@@ -56,8 +53,6 @@ function App() {
             </MainLayout>
           }
         />
-
-        {/* SUCURSAL JUÁREZ -> muestra botón */}
         <Route
           path="/sucursal/juarez"
           element={
@@ -70,8 +65,6 @@ function App() {
             </MainLayout>
           }
         />
-
-        {/* SUCURSAL AMÉRICAS -> muestra botón */}
         <Route
           path="/sucursal/americas"
           element={
@@ -80,6 +73,18 @@ function App() {
               <WhatsappFloat
                 phone="6564189051"
                 message="Hola, me interesa agendar cita en la sucursal Américas."
+              />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/especialistas"
+          element={
+            <MainLayout>
+              <Especialistas />
+              <WhatsappFloat
+                phone="526563116130"
+                message="Hola, me gustaría agendar una cita con un especialista."
               />
             </MainLayout>
           }
