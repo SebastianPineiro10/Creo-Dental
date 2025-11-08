@@ -3,11 +3,11 @@ import "./VideoCarousel.css";
 
 function VideoCarousel() {
   const slides = [
-    { type: "image", src: "/videos-cliente-Fernando/WhatsApp Image 2025-10-12 at 14.02.19.jpeg" },
-    { type: "image", src: "/videos-cliente-Fernando/WhatsApp Image 2025-10-12 at 14.02.38.jpeg" },
-    { type: "video", src: "/videos-cliente-Fernando/WhatsApp Video 2025-10-12 at 14.02.18.mp4" },
-    { type: "video", src: "/videos-cliente-Fernando/WhatsApp Video 2025-10-12 at 14.02.38.mp4" },
-    { type: "video", src: "/videos-cliente-Fernando/WhatsApp Video 2025-10-12 at 14.02.40.mp4" },
+    { type: "image", src: "/videos-cliente-fernando/img-1.jpeg" },
+    { type: "image", src: "/videos-cliente-fernando/img-2.jpeg" },
+    { type: "video", src: "/videos-cliente-fernando/video-1.mp4" },
+    { type: "video", src: "/videos-cliente-fernando/video-2.mp4" },
+    { type: "video", src: "/videos-cliente-fernando/video-3.mp4" },
   ];
 
   const [current, setCurrent] = useState(0);
