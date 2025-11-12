@@ -66,6 +66,7 @@ function Contact() {
           {/* -------- CLÍNICA AMÉRICAS -------- */}
           <div className="contact-card">
             <h2>Creo Dental Américas</h2>
+           
 
             <div className="info-row">
               <MapPin size={18} strokeWidth={1.5} />

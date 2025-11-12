@@ -2,7 +2,7 @@
   font-family: "Montserrat", sans-serif;
   background: #fff;
   color: #1a1a1a;
-  padding: 3.5rem 2rem  4rem;
+  padding: 3.5rem 2rem 4rem;
   opacity: 0;
   filter: blur(6px);
   transition: opacity 1.2s ease, filter 1.2s ease;
@@ -63,25 +63,64 @@
   flex: 1;
   min-width: 330px;
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   padding: 3rem 2.5rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
   opacity: 0;
   transform: translateY(0);
   animation: fade-card 1.2s ease forwards;
 }
 
-.contact-card:nth-child(1) {
-  animation-delay: 0.6s;
+/* --- Efecto de borde dorado que se “revela” una sola vez --- */
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(to right, #2f1f08 0%, #b88a1a 50%, #2f1f08 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: fillGolden 1.8s ease forwards;
+  z-index: 0;
 }
 
-.contact-card:nth-child(2) {
+.contact-card::after {
+  content: "";
+  position: absolute;
+  inset: 2px; /* Grosor del borde */
+  border-radius: 18px;
+  background: #fff;
+  z-index: 1;
+}
+
+/* --- Contenido por encima del relleno --- */
+.contact-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Animación de relleno dorado --- */
+@keyframes fillGolden {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* --- Retraso individual para cada tarjeta --- */
+.contact-card:nth-child(1)::before {
+  animation-delay: 0.5s;
+}
+
+.contact-card:nth-child(2)::before {
   animation-delay: 0.7s;
 }
 
-/* Hover solo cambia la sombra, no levanta */
+/* Hover solo cambia la sombra */
 .contact-card:hover {
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
 }
@@ -131,6 +170,8 @@
   text-decoration: none;
   transition: background 0.3s ease;
   margin-top: 1.2rem;
+  position: relative;
+  z-index: 3;
 }
 
 .btn-whatsapp:hover {
@@ -158,7 +199,6 @@
   }
 }
 
-/* Tarjetas solo hacen fade-in, sin levantarse */
 @keyframes fade-card {
   0% {
     opacity: 0;
@@ -181,5 +221,24 @@
 
   .contact-header h1 {
     font-size: 2rem;
+  }
+}
+
+/* === LÍNEA DORADA DE TÍTULOS (navbar style) === */
+.divider-line {
+  width: 0%;
+  height: 3px;
+  margin: 0.8rem 0 1.8rem;
+  border-radius: 10px;
+  background: linear-gradient(to right, #2f1f08 0%, #b88a1a 50%, #2f1f08 100%);
+  animation: line-fill 2.2s ease forwards;
+}
+
+@keyframes line-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
   }
 }
