@@ -1,44 +1,31 @@
+// src/context/LanguageContext.js
 import { createContext, useContext, useState, useEffect } from "react";
-
-// Idiomas soportados
-const SUPPORTED_LANGS = ["es", "en"];
 
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState("es");
 
-  // Detectar idioma automáticamente SOLO si no hay uno guardado
+  // Cargar idioma guardado
   useEffect(() => {
-    const savedLang = localStorage.getItem("lang");
-
-    if (savedLang && SUPPORTED_LANGS.includes(savedLang)) {
-      setLanguage(savedLang);
-      return;
-    }
-
-    // Detectar el idioma del navegador
-    const browserLang = navigator.language.slice(0, 2);
-
-    if (SUPPORTED_LANGS.includes(browserLang)) {
-      setLanguage(browserLang);
-    } else {
-      setLanguage("es"); // español por defecto
-    }
+    const saved = localStorage.getItem("creoLang");
+    if (saved) setLanguage(saved);
   }, []);
 
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
-    localStorage.setItem("lang", lang); // guardar preferencia del usuario
+  // Guardar automáticamente cuando cambie
+  useEffect(() => {
+    localStorage.setItem("creoLang", language);
+  }, [language]);
+
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "es" ? "en" : "es"));
   };
 
   return (
-    <LanguageContext.Provider value={{ language, changeLanguage }}>
+    <LanguageContext.Provider value={{ language, toggleLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
 }
 
-export function useLanguage() {
-  return useContext(LanguageContext);
-}
+export const useLanguage = () => useContext(LanguageContext);

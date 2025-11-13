@@ -39,7 +39,7 @@ function Contact() {
               <Phone size={18} strokeWidth={1.5} />
               <div>
                 <h3>Teléfonos</h3>
-                <p>656 311 6130 / 915 875 2441</p>
+                <p>+52 656 311 6130 /+1 915 875 2441</p>
               </div>
             </div>
 
@@ -80,7 +80,7 @@ function Contact() {
               <Phone size={18} strokeWidth={1.5} />
               <div>
                 <h3>Teléfono</h3>
-                <p>656 418 9051</p>
+                <p>+52 656 418 9051</p>
               </div>
             </div>
 
