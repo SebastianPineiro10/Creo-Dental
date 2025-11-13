@@ -29,8 +29,8 @@ function Juarez() {
             <Phone size={18} strokeWidth={1.5} />
             <div>
               <h3>Teléfonos</h3>
-              <p>656 311 6130</p>
-              <p>915 875 2441</p>
+              <p>+52 656 311 6130</p>
+              <p>+1 915 875 2441</p>
             </div>
           </div>
 
