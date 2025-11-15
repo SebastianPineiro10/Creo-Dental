@@ -12,6 +12,7 @@ import SucursalAmericas from "./pages/sucursal-americas/Americas";
 
 // Especialistas
 import Especialistas from "./pages/especialistas/Especialistas.jsx";
+import PhoneFloat from "./components/PhoneCallButton/PhoneCallButton.jsx";
 
 // Layout base
 function MainLayout({ children }) {
@@ -34,6 +35,7 @@ function App() {
             <MainLayout>
               <Home />
               <WhatsappFloat phone="526563116130" />
+              <PhoneFloat phone="+19187439500" />
             </MainLayout>
           }
         />

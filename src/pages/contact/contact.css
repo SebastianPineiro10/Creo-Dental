@@ -1,3 +1,6 @@
+/* ===========================================
+   SECCIÓN PRINCIPAL
+=========================================== */
 .contact-section {
   font-family: "Montserrat", sans-serif;
   background: #fff;
@@ -13,14 +16,18 @@
   filter: blur(0);
 }
 
-/* ---------- CONTENEDOR GENERAL ---------- */
+/* ===========================================
+   CONTENEDOR
+=========================================== */
 .contact-container {
   max-width: 1100px;
   margin: 0 auto;
   animation: rise-fade 1.3s ease both;
 }
 
-/* ---------- CABECERA ---------- */
+/* ===========================================
+   CABECERA
+=========================================== */
 .contact-header {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -32,7 +39,6 @@
 .contact-header h1 {
   font-size: 2.4rem;
   font-weight: 500;
-  letter-spacing: 0.5px;
   color: #111;
   margin: 1px;
 }
@@ -40,13 +46,14 @@
 .contact-header p {
   font-size: 0.95rem;
   color: #555;
-  margin-top: 0.4rem;
   max-width: 600px;
-  margin-inline: auto;
+  margin: 0.4rem auto 0;
   line-height: 1.5;
 }
 
-/* ---------- GRID DE CLÍNICAS ---------- */
+/* ===========================================
+   GRID DE CLÍNICAS
+=========================================== */
 .clinics-grid {
   display: flex;
   justify-content: center;
@@ -58,7 +65,9 @@
   animation-delay: 0.5s;
 }
 
-/* ---------- TARJETA DE CONTACTO ---------- */
+/* ===========================================
+   TARJETA
+=========================================== */
 .contact-card {
   flex: 1;
   min-width: 330px;
@@ -69,11 +78,10 @@
   position: relative;
   overflow: hidden;
   opacity: 0;
-  transform: translateY(0);
   animation: fade-card 1.2s ease forwards;
 }
 
-/* --- Efecto de borde dorado que se “revela” una sola vez --- */
+/* Borde dorado */
 .contact-card::before {
   content: "";
   position: absolute;
@@ -89,52 +97,38 @@
 .contact-card::after {
   content: "";
   position: absolute;
-  inset: 2px; /* Grosor del borde */
+  inset: 2px;
   border-radius: 18px;
   background: #fff;
   z-index: 1;
 }
 
-/* --- Contenido por encima del relleno --- */
 .contact-card > * {
   position: relative;
   z-index: 2;
 }
 
-/* --- Animación de relleno dorado --- */
-@keyframes fillGolden {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
+/* Retrasos individuales */
+.contact-card:nth-child(1)::before { animation-delay: 0.5s; }
+.contact-card:nth-child(2)::before { animation-delay: 0.7s; }
 
-/* --- Retraso individual para cada tarjeta --- */
-.contact-card:nth-child(1)::before {
-  animation-delay: 0.5s;
-}
-
-.contact-card:nth-child(2)::before {
-  animation-delay: 0.7s;
-}
-
-/* Hover solo cambia la sombra */
 .contact-card:hover {
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
 }
 
-/* ---------- TÍTULO ---------- */
+/* ===========================================
+   TÍTULOS
+=========================================== */
 .contact-card h2 {
   font-size: 1.4rem;
   color: #b9935a;
   font-weight: 500;
   margin-bottom: 2rem;
-  letter-spacing: 0.3px;
 }
 
-/* ---------- INFO ---------- */
+/* ===========================================
+   FILAS DE INFO
+=========================================== */
 .info-row {
   display: flex;
   align-items: flex-start;
@@ -144,7 +138,6 @@
 
 .info-row h3 {
   font-size: 1.05rem;
-  font-weight: 500;
   color: #b9935a;
   margin-bottom: 0.3rem;
 }
@@ -152,11 +145,51 @@
 .info-row p {
   font-size: 0.95rem;
   color: #333;
-  margin: 0.15rem 0;
   line-height: 1.4;
 }
 
-/* ---------- BOTÓN WHATSAPP ---------- */
+.contact-card .info-row div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ===========================================
+   BOTONES TELÉFONO (NEGRO + DORADO)
+=========================================== */
+.btn-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #000;
+  border: 2px solid #b9935a;
+  color: #fff;
+  padding: 0.45rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+  transition: 0.3s ease;
+  width: fit-content;
+}
+
+.btn-phone:hover {
+  background: #111;
+  transform: translateY(-2px);
+}
+
+/* === ALINEAR BOTONES A LA DERECHA === */
+.phone-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+/* ===========================================
+   BOTÓN WHATSAPP
+=========================================== */
 .btn-whatsapp {
   display: inline-flex;
   align-items: center;
@@ -170,45 +203,74 @@
   text-decoration: none;
   transition: background 0.3s ease;
   margin-top: 1.2rem;
-  position: relative;
-  z-index: 3;
 }
 
 .btn-whatsapp:hover {
   background: #a6824c;
 }
 
-/* ---------- ANIMACIONES ---------- */
-@keyframes fade-up {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+/* ===========================================
+   BOTÓN LLAMAR
+=========================================== */
+.btn-contact-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #000;
+  border: 2px solid #b9935a;
+  color: #fff;
+  padding: 0.9rem 1.6rem;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-contact-call:hover {
+  background: #111;
+  transform: translateY(-2px);
+}
+
+/* ===========================================
+   CONTENEDOR ACCIONES
+=========================================== */
+.contact-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.6rem;
+  height: 46px;
+  white-space: nowrap;
+}
+.phone-buttons {
+  display: flex;
+  flex-direction: row;   /* ← ahora horizontal */
+  justify-content: flex-end; /* ← alineados a la derecha */
+  gap: 0.6rem; /* espacio entre botones */
+  margin-left: auto; /* empuja todo hacia la derecha */
+}
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+@media (max-width: 520px) {
+  .contact-actions {
+    flex-direction: column;
+    width: 100%;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  .contact-actions a {
+    width: 100%;
   }
 }
 
-@keyframes fade-in-cards {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-card {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
   .clinics-grid {
     flex-direction: column;
@@ -224,21 +286,41 @@
   }
 }
 
-/* === LÍNEA DORADA DE TÍTULOS (navbar style) === */
-.divider-line {
-  width: 0%;
-  height: 3px;
-  margin: 0.8rem 0 1.8rem;
-  border-radius: 10px;
-  background: linear-gradient(to right, #2f1f08 0%, #b88a1a 50%, #2f1f08 100%);
-  animation: line-fill 2.2s ease forwards;
+/* ===========================================
+   ANIMACIONES
+=========================================== */
+@keyframes fillGolden {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
-@keyframes line-fill {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-cards {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-card {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* ===========================================
+   BOTONES DE TELÉFONO EN FILA
+=========================================== */
+
+.phone-buttons {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+.phone-buttons .btn-phone {
+  margin: 0; /* eliminar márgenes verticales viejos */
 }

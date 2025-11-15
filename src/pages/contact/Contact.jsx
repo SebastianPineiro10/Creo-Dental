@@ -13,20 +13,26 @@ function Contact() {
   return (
     <section className={`contact-section ${fadeIn ? "fade-in" : ""}`}>
       <div className="contact-container">
+
+        {/* CABECERA */}
         <header className="contact-header">
           <h1>Contáctanos</h1>
           <p>
-            Encuentra la clínica más cercana y agenda tu cita. En Creo Dental, te
-            esperamos con atención profesional y personalizada.
+            Encuentra la clínica más cercana y agenda tu cita. En Creo Dental,
+            te esperamos con atención profesional y personalizada.
           </p>
         </header>
 
-        {/* --- GRID CON DOS CLÍNICAS --- */}
+        {/* GRID DE CLÍNICAS */}
         <div className="clinics-grid">
-          {/* -------- CLÍNICA JUÁREZ -------- */}
+
+          {/* ===========================
+              CLÍNICA JUÁREZ
+          ============================ */}
           <div className="contact-card">
             <h2>Creo Dental Juárez</h2>
 
+            {/* DIRECCIÓN */}
             <div className="info-row">
               <MapPin size={18} strokeWidth={1.5} />
               <div>
@@ -35,14 +41,27 @@ function Contact() {
               </div>
             </div>
 
+            {/* TELÉFONOS */}
             <div className="info-row">
               <Phone size={18} strokeWidth={1.5} />
               <div>
                 <h3>Teléfonos</h3>
-                <p>+52 656 311 6130 /+1 915 875 2441</p>
+
+                <div className="phone-buttons">
+                  <a href="tel:+526563116130" className="btn-phone">
+                    <Phone size={16} strokeWidth={1.5} />
+                    +52 656 311 6130
+                  </a>
+
+                  <a href="tel:+19158752441" className="btn-phone">
+                    <Phone size={16} strokeWidth={1.5} />
+                    +1 915 875 2441
+                  </a>
+                </div>
               </div>
             </div>
 
+            {/* HORARIOS */}
             <div className="info-row">
               <Clock size={18} strokeWidth={1.5} />
               <div>
@@ -52,6 +71,7 @@ function Contact() {
               </div>
             </div>
 
+            {/* WHATSAPP */}
             <a
               href="https://wa.me/526563116130?text=Hola,%20me%20interesa%20agendar%20una%20cita%20en%20Creo%20Dental%20Juárez"
               target="_blank"
@@ -63,11 +83,13 @@ function Contact() {
             </a>
           </div>
 
-          {/* -------- CLÍNICA AMÉRICAS -------- */}
+          {/* ===========================
+              CLÍNICA AMÉRICAS
+          ============================ */}
           <div className="contact-card">
             <h2>Creo Dental Américas</h2>
-           
 
+            {/* DIRECCIÓN */}
             <div className="info-row">
               <MapPin size={18} strokeWidth={1.5} />
               <div>
@@ -76,14 +98,22 @@ function Contact() {
               </div>
             </div>
 
+            {/* TELÉFONO */}
             <div className="info-row">
               <Phone size={18} strokeWidth={1.5} />
               <div>
                 <h3>Teléfono</h3>
-                <p>+52 656 418 9051</p>
+
+                <div className="phone-buttons">
+                  <a href="tel:+526564189051" className="btn-phone">
+                    <Phone size={16} strokeWidth={1.5} />
+                    +52 656 418 9051
+                  </a>
+                </div>
               </div>
             </div>
 
+            {/* HORARIOS */}
             <div className="info-row">
               <Clock size={18} strokeWidth={1.5} />
               <div>
@@ -92,6 +122,7 @@ function Contact() {
               </div>
             </div>
 
+            {/* WHATSAPP */}
             <a
               href="https://wa.me/526564189051?text=Hola,%20me%20interesa%20agendar%20una%20cita%20en%20Creo%20Dental%20Américas"
               target="_blank"
@@ -102,6 +133,7 @@ function Contact() {
               Agendar por WhatsApp
             </a>
           </div>
+
         </div>
       </div>
     </section>
