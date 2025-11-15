@@ -125,3 +125,161 @@
     margin: 0 auto;
   }
 }
+
+/* ============================================================
+   1) TABLETS VERTICALES — 768px
+============================================================ */
+@media (max-width: 768px) {
+  .americas-section {
+    padding: 4.5rem 1.8rem;
+  }
+
+  .americas-header h1 {
+    font-size: 2.15rem;
+  }
+
+  .americas-address {
+    font-size: 0.95rem;
+  }
+
+  .americas-grid {
+    gap: 3rem;
+  }
+
+  .americas-map {
+    height: 360px;
+  }
+
+  .americas-info {
+    gap: 2rem;
+  }
+}
+
+
+/* ============================================================
+   2) TELÉFONOS MEDIANOS — 600px
+============================================================ */
+@media (max-width: 600px) {
+  .americas-section {
+    padding: 4rem 1.4rem;
+  }
+
+  .americas-header h1 {
+    font-size: 2rem;
+  }
+
+  .americas-address {
+    font-size: 0.92rem;
+    gap: 6px;
+  }
+
+  .info-item p {
+    font-size: 0.9rem;
+  }
+
+  .info-item {
+    gap: 0.8rem;
+  }
+
+  .btn-whatsapp {
+    font-size: 0.95rem;
+    padding: 0.85rem 1.5rem;
+  }
+
+  .americas-map {
+    height: 330px;
+  }
+}
+
+
+/* ============================================================
+   3) DISPOSITIVOS PEQUEÑOS — 480px
+============================================================ */
+@media (max-width: 480px) {
+  .americas-section {
+    padding: 3.5rem 1.2rem;
+  }
+
+  .americas-header h1 {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .americas-address {
+    font-size: 0.88rem;
+  }
+
+  .americas-map {
+    height: 300px;
+    border-radius: 16px;
+  }
+
+  .info-item h3 {
+    font-size: 1rem;
+  }
+
+  .info-item p {
+    font-size: 0.87rem;
+  }
+}
+
+
+/* ============================================================
+   4) SMARTPHONES MODERNOS — 414px
+   iPhone 12–15, Galaxy S21–S23
+============================================================ */
+@media (max-width: 414px) {
+  .americas-section {
+    padding: 3.2rem 1.1rem;
+  }
+
+  .americas-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .btn-whatsapp {
+    padding: 0.9rem 1.4rem;
+    font-size: 0.93rem;
+  }
+
+  .americas-map {
+    height: 290px;
+  }
+}
+
+
+/* ============================================================
+   5) EXTRA SMALL — 360px
+   Moto E, Galaxy A01, Xiaomi Go
+============================================================ */
+@media (max-width: 360px) {
+  .americas-section {
+    padding: 3rem 1rem;
+  }
+
+  .americas-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .americas-address {
+    font-size: 0.82rem;
+  }
+
+  .info-item h3 {
+    font-size: 0.95rem;
+  }
+
+  .info-item p {
+    font-size: 0.83rem;
+  }
+
+  .btn-whatsapp {
+    padding: 0.8rem 1.3rem;
+    font-size: 0.88rem;
+  }
+
+  .americas-map {
+    height: 260px;
+    border-radius: 14px;
+  }
+}

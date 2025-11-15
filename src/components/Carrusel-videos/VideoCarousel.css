@@ -100,25 +100,121 @@
   border: 2px solid white;
 }
 
-/* === RESPONSIVE (mantenerlas grandes SIEMPRE) === */
+/* ============================================================
+   992px — TABLETS GRANDES / LAPTOPS PEQUEÑAS
+============================================================ */
 @media (max-width: 992px) {
-  .dot {
-    width: 20px;
-    height: 20px;
+  .carousel-title {
+    font-size: 1.9rem;
   }
-}
 
-@media (max-width: 768px) {
-  .dot {
-    width: 19px;
-    height: 19px;
-  }
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 992px) {
   .carousel-item {
-    height: 400px;
+    height: 420px;
+  }
+
+  .carousel-content img,
+  .carousel-content video {
+    border-radius: 18px;
+  }
+
+  .dot {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+/* ============================================================
+   768px — TABLETS VERTICALES (iPad, Galaxy Tab)
+============================================================ */
+@media (max-width: 768px) {
+  .video-carousel-section {
+    padding: 3rem 1rem;
+  }
+
+  .carousel-title {
+    font-size: 1.7rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .carousel-wrapper {
+    max-width: 90%;
+  }
+
+  .carousel-item {
+    height: 330px;
+  }
+
+  .carousel-content img,
+  .carousel-content video {
+    border-radius: 16px;
+  }
+
+  .carousel-dots {
+    gap: 14px;
+    margin-top: 1.6rem;
+  }
+
+  .dot {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+
+/* ============================================================
+   600px — TELÉFONOS GRANDES / MODERNOS
+   iPhone 12–15, Galaxy S21–S23
+============================================================ */
+@media (max-width: 600px) {
+  .carousel-title {
+    font-size: 1.55rem;
+  }
+
+  .carousel-wrapper {
+    max-width: 100%;
+  }
+
+  .carousel-item {
+    height: 290px;
+  }
+
+  .carousel-dots {
+    gap: 12px;
+  }
+
+  .dot {
+    width: 15px;
+    height: 15px;
+  }
+
+  .dot.active {
+    transform: scale(1.4);
+  }
+}
+
+
+/* ============================================================
+   480px — SMARTPHONES PEQUEÑOS
+   iPhone SE, Android compactos
+============================================================ */
+@media (max-width: 480px) {
+  .carousel-title {
+    font-size: 1.45rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .carousel-item {
+    height: 250px;
+  }
+
+  .carousel-content img,
+  .carousel-content video {
+    border-radius: 14px;
+  }
+
+  .carousel-dots {
+    gap: 10px;
   }
 
   .dot {
@@ -127,18 +223,63 @@
   }
 }
 
-@media (max-width: 768px) {
+
+/* ============================================================
+   414px — iPhone 12 mini / Android medianos
+============================================================ */
+@media (max-width: 414px) {
+  .video-carousel-section {
+    padding: 2.5rem 0.9rem;
+  }
+
   .carousel-title {
-    font-size: 1.6rem;
-    margin-bottom: 1.8rem;
+    font-size: 1.35rem;
+    letter-spacing: 0.3px;
   }
 
   .carousel-item {
-    height: 320px;
+    height: 230px;
+  }
+
+  .carousel-dots {
+    gap: 9px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+
+/* ============================================================
+   360px — ANDROID SUPER COMPACTOS
+   Moto E, Xiaomi GO, Galaxy A01
+============================================================ */
+@media (max-width: 360px) {
+  .carousel-title {
+    font-size: 1.28rem;
+  }
+
+  .carousel-item {
+    height: 210px;
+  }
+
+  .carousel-content img,
+  .carousel-content video {
+    border-radius: 12px;
+  }
+
+  .carousel-dots {
+    gap: 8px;
   }
 
   .dot {
     width: 11px;
     height: 11px;
+  }
+
+  .dot.active {
+    transform: scale(1.3);
   }
 }

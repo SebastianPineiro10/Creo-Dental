@@ -105,7 +105,9 @@
   border: none;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ============================================================
+   900px — Ajustes generales tablet landscape
+============================================================ */
 @media (max-width: 900px) {
   .juarez-section {
     padding: 4rem 1.5rem;
@@ -123,5 +125,158 @@
   .btn-whatsapp {
     justify-content: center;
     margin: 0 auto;
+  }
+}
+
+
+/* ============================================================
+   768px — Tablets verticales (iPad Mini, Samsung Tab)
+============================================================ */
+@media (max-width: 768px) {
+  .juarez-section {
+    padding: 4.5rem 1.8rem;
+  }
+
+  .juarez-header h1 {
+    font-size: 2.15rem;
+  }
+
+  .juarez-grid {
+    gap: 3.2rem;
+  }
+
+  .juarez-map {
+    height: 360px;
+  }
+
+  .juarez-info {
+    gap: 2rem;
+  }
+}
+
+
+/* ============================================================
+   600px — Teléfonos medianos (iPhones estándar, Xiaomi, Galaxy)
+============================================================ */
+@media (max-width: 600px) {
+  .juarez-section {
+    padding: 4rem 1.4rem;
+  }
+
+  .juarez-header h1 {
+    font-size: 2rem;
+  }
+
+  .juarez-address {
+    font-size: 0.95rem;
+    gap: 6px;
+  }
+
+  .info-item p {
+    font-size: 0.9rem;
+  }
+
+  .info-item {
+    gap: 0.8rem;
+  }
+
+  .btn-whatsapp {
+    font-size: 0.95rem;
+    padding: 0.85rem 1.5rem;
+  }
+
+  .juarez-map {
+    height: 330px;
+  }
+}
+
+
+/* ============================================================
+   480px — Smartphones pequeños (iPhone SE, Galaxy S8)
+============================================================ */
+@media (max-width: 480px) {
+  .juarez-section {
+    padding: 3.5rem 1.2rem;
+  }
+
+  .juarez-header h1 {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .juarez-address {
+    font-size: 0.9rem;
+  }
+
+  .juarez-map {
+    height: 300px;
+    border-radius: 16px;
+  }
+
+  .info-item h3 {
+    font-size: 1rem;
+  }
+
+  .info-item p {
+    font-size: 0.87rem;
+  }
+}
+
+
+/* ============================================================
+   414px — iPhone 12–15, Galaxy S21–S23
+============================================================ */
+@media (max-width: 414px) {
+  .juarez-section {
+    padding: 3.2rem 1.1rem;
+  }
+
+  .juarez-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .btn-whatsapp {
+    padding: 0.9rem 1.4rem;
+    font-size: 0.93rem;
+  }
+
+  .juarez-map {
+    height: 290px;
+  }
+}
+
+
+/* ============================================================
+   360px — Android compactos (Moto E, Galaxy A01, Xiaomi Go)
+============================================================ */
+@media (max-width: 360px) {
+  .juarez-section {
+    padding: 3rem 1rem;
+  }
+
+  .juarez-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .juarez-address {
+    font-size: 0.85rem;
+  }
+
+  .info-item h3 {
+    font-size: 0.95rem;
+  }
+
+  .info-item p {
+    font-size: 0.83rem;
+  }
+
+  .btn-whatsapp {
+    padding: 0.8rem 1.3rem;
+    font-size: 0.88rem;
+  }
+
+  .juarez-map {
+    height: 260px;
+    border-radius: 14px;
   }
 }
