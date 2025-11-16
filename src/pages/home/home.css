@@ -506,36 +506,208 @@
   background: var(--color-gold-main, #caa45b);
 }
 
-/* ===============================
-   RESPONSIVE
-================================ */
+/* ============================================================
+   768px — Tablets verticales y celulares grandes
+============================================================ */
 @media (max-width: 768px) {
+  /* HERO */
+  .hero {
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.4rem;
+    margin-top: -70px;
+  }
+  .hero-container {
+    text-align: center;
+    padding-right: 0;
+    max-width: 90%;
+  }
+  .arch-title {
+    font-size: 2.4rem;
+    letter-spacing: 3px;
+  }
+  .arch-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .btn-gold {
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+  }
+
+  /* FILOSOFÍA */
+  .mvv-section {
+    padding: 6rem 1.6rem;
+    background: #fff;
+  }
+  .mvv-header h2 {
+    font-size: 1.7rem;
+    letter-spacing: 3px;
+  }
+  .mvv-header p {
+    max-width: 90%;
+  }
+  .mvv-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .mvv-card {
+    padding: 2.2rem 1.6rem;
+    text-align: center;
+  }
+  .mvv-card h3 {
+    font-size: 1.25rem;
+    border: none;
+    text-align: center;
+  }
+  .mvv-card p,
+  .mvv-card ul {
+    text-align: center;
+  }
+
+  /* CARRUSEL */
+  .hero-carousel-wrapper {
+    margin: 30px 0;
+  }
   .carousel-title {
     font-size: 1.8rem;
     margin-bottom: 2rem;
   }
-
   .hero-carousel {
     max-width: 95%;
     border-radius: 14px;
   }
-
   .carousel-content img,
   .carousel-content video {
     max-height: 340px;
-    border-radius: 14px;
   }
-
   .carousel-btn {
     font-size: 2rem;
     padding: 0.3rem 0.8rem;
   }
+  .carousel-btn.prev { left: 0.6rem; }
+  .carousel-btn.next { right: 0.6rem; }
+}
 
-  .carousel-btn.prev {
-    left: 0.6rem;
+
+/* ============================================================
+   640px — Celulares grandes modernos
+============================================================ */
+@media (max-width: 640px) {
+  .arch-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  .arch-subtitle {
+    font-size: 0.95rem;
   }
 
-  .carousel-btn.next {
-    right: 0.6rem;
+  .mvv-card {
+    padding: 2rem 1.4rem;
+  }
+
+  .carousel-content img,
+  .carousel-content video {
+    max-height: 300px;
+  }
+}
+
+
+/* ============================================================
+   480px — iPhone 8 / Android clásico
+============================================================ */
+@media (max-width: 480px) {
+  .arch-title {
+    font-size: 1.8rem;
+  }
+  .arch-subtitle {
+    font-size: 0.9rem;
+  }
+  .btn-gold {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.8rem;
+  }
+
+  .mvv-section {
+    padding: 4.2rem 1.2rem;
+  }
+  .mvv-card {
+    padding: 1.9rem 1.2rem;
+  }
+
+  .carousel-content img,
+  .carousel-content video {
+    max-height: 280px;
+  }
+}
+
+
+/* ============================================================
+   390px — iPhone 12/13/14
+============================================================ */
+@media (max-width: 390px) {
+  .arch-title {
+    font-size: 1.55rem;
+  }
+  .arch-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .mvv-card {
+    padding: 1.7rem 1.1rem;
+  }
+
+  .carousel-btn {
+    font-size: 1.8rem;
+  }
+}
+
+
+/* ============================================================
+   📱 360px — Android gama media (muuuy común)
+============================================================ */
+@media (max-width: 360px) {
+  .arch-title {
+    font-size: 1.45rem;
+  }
+  .arch-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .mvv-card {
+    padding: 1.6rem 1rem;
+  }
+
+  .carousel-content img,
+  .carousel-content video {
+    max-height: 240px;
+  }
+}
+
+
+/* ============================================================
+   320px — los teléfonos más pequeños
+============================================================ */
+@media (max-width: 320px) {
+  .arch-title {
+    font-size: 1.3rem;
+  }
+  .arch-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .mvv-card {
+    padding: 1.5rem 0.9rem;
+  }
+
+  .btn-gold {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  .carousel-content img,
+  .carousel-content video {
+    max-height: 220px;
   }
 }

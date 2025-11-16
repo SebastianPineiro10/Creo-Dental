@@ -1,10 +1,7 @@
 import { useLocation } from "react-router-dom";
 import "./WhatsappFloat.css";
 
-/**
- * Botón flotante de WhatsApp (versión Creo Dental / Casa Ojiva)
- * - Misma lógica que MP Innova, con nuevo estilo visual.
- */
+
 export default function WhatsappFloat({
   phone,
   message = "Hola, me interesa agendar una cita en Creo Dental.",

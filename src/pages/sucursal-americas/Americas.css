@@ -283,3 +283,202 @@
     border-radius: 14px;
   }
 }
+/* ============================================================
+    900px — Ajuste general de tablet horizontal
+============================================================ */
+@media (max-width: 900px) {
+  .americas-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .americas-grid {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .btn-whatsapp {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .americas-map {
+    height: 340px;
+  }
+}
+
+
+/* ============================================================
+   768px — Tablets verticales
+============================================================ */
+@media (max-width: 768px) {
+  .americas-section {
+    padding: 4.5rem 1.6rem;
+  }
+
+  .americas-header h1 {
+    font-size: 2.05rem;
+  }
+
+  .americas-address {
+    font-size: 0.94rem;
+  }
+
+  .americas-info {
+    gap: 2rem;
+  }
+
+  .americas-map {
+    height: 330px;
+    border-radius: 18px;
+  }
+
+  .info-item p {
+    font-size: 0.92rem;
+  }
+}
+
+
+/* ============================================================
+   600px — Celulares grandes
+============================================================ */
+@media (max-width: 600px) {
+  .americas-section {
+    padding: 4rem 1.35rem;
+  }
+
+  .americas-header h1 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+  }
+
+  .americas-address {
+    font-size: 0.9rem;
+    gap: 6px;
+  }
+
+  .info-item {
+    gap: 0.8rem;
+  }
+
+  .btn-whatsapp {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.93rem;
+  }
+
+  .americas-map {
+    height: 310px;
+  }
+}
+
+
+/* ============================================================
+    480px — Smartphones estándar
+============================================================ */
+@media (max-width: 480px) {
+  .americas-section {
+    padding: 3.5rem 1.2rem;
+  }
+
+  .americas-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .americas-address {
+    font-size: 0.88rem;
+  }
+
+  .info-item h3 {
+    font-size: 1rem;
+  }
+
+  .info-item p {
+    font-size: 0.85rem;
+  }
+
+  .americas-map {
+    height: 290px;
+    border-radius: 16px;
+  }
+}
+
+
+/* ============================================================
+   📌 414px — iPhone 12–15 / Galaxy S21–S23
+============================================================ */
+@media (max-width: 414px) {
+  .americas-section {
+    padding: 3.2rem 1.1rem;
+  }
+
+  .americas-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .btn-whatsapp {
+    padding: 0.82rem 1.35rem;
+    font-size: 0.9rem;
+  }
+
+  .americas-map {
+    height: 275px;
+  }
+}
+
+
+/* ============================================================
+    360px — Android compactos
+============================================================ */
+@media (max-width: 360px) {
+  .americas-section {
+    padding: 3rem 1rem;
+  }
+
+  .americas-header h1 {
+    font-size: 1.55rem;
+  }
+
+  .americas-address {
+    font-size: 0.82rem;
+  }
+
+  .info-item h3 {
+    font-size: 0.95rem;
+  }
+
+  .info-item p {
+    font-size: 0.82rem;
+  }
+
+  .btn-whatsapp {
+    padding: 0.78rem 1.25rem;
+    font-size: 0.87rem;
+  }
+
+  .americas-map {
+    height: 255px;
+    border-radius: 14px;
+  }
+}
+
+
+/* ============================================================
+    320px — los teléfonos más pequeños
+============================================================ */
+@media (max-width: 320px) {
+  .americas-section {
+    padding: 2.8rem 0.9rem;
+  }
+
+  .americas-header h1 {
+    font-size: 1.45rem;
+  }
+
+  .btn-whatsapp {
+    font-size: 0.85rem;
+    padding: 0.75rem 1.15rem;
+  }
+
+  .americas-map {
+    height: 240px;
+  }
+}
