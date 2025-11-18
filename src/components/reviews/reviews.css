@@ -1,434 +1,229 @@
-/* ============================
+/* ================================
    SECCIÓN GENERAL
-============================ */
+================================ */
 .reviews-section {
-  padding: 7rem 2rem;
-  background: #f6f4ef; /* tono crema-clínico premium */
+  padding: 6rem 2rem;
+  background: #f6f4ef;
   font-family: "Montserrat", sans-serif;
 }
 
-/* ============================
+/* ================================
    TÍTULO
-============================ */
+================================ */
 .reviews-title {
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  color: #c5a56a; /* dorado elegante */
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
+  color: #1f1f1f;
+  letter-spacing: 3px;
   text-align: center;
+  margin-bottom: 2.6rem;
 }
 
-/* ============================
-   TABS PREMIUM
-============================ */
+/* ================================
+   TABS
+================================ */
+.reviews-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
 .reviews-tabs {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   gap: 1rem;
-  margin-bottom: 3.5rem;
+  justify-content: center;
 }
 
 .reviews-tabs button {
-  padding: 0.75rem 1.9rem;
-  border-radius: 50px;
-  border: 2px solid #c5a56a;
-  background: #ffffff;
-  color: #c5a56a;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.35s ease;
-  letter-spacing: 1.3px;
-  font-size: 0.95rem;
-}
-
-.reviews-tabs button.active,
-.reviews-tabs button:hover {
-  background: #c5a56a;
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-/* ============================
-   GRID
-============================ */
-.reviews-grid {
-  display: grid;
-  gap: 2.4rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ============================
-   TARJETA — PREMIUM CLÍNICO
-============================ */
-.review-card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 2.2rem;
-  border: 1px solid rgba(197,165,106,0.25); /* dorado suave */
-  box-shadow:
-    0 4px 10px rgba(0,0,0,0.04),
-    0 12px 36px rgba(0,0,0,0.08);
-  transition: all 0.35s ease;
-}
-
-.review-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 6px 14px rgba(0,0,0,0.06),
-    0 16px 48px rgba(0,0,0,0.15);
-}
-
-/* ICONO GOOGLE */
-.review-google-icon img {
-  width: 34px;
-  margin-bottom: 0.8rem;
-  opacity: 0.92;
-  filter: drop-shadow(0 0 4px rgba(0,0,0,0.15));
-}
-
-/* ============================
-   TITULO + ESTRELLAS
-============================ */
-.review-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.review-header h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0;
-  letter-spacing: 0.3px;
-}
-
-.review-stars {
-  color: #f4b400; /* Google yellow */
-  font-size: 1.15rem;
-}
-
-/* ============================
-   FECHA
-============================ */
-.review-date {
-  color: #7a7a7a;
-  font-size: 0.92rem;
-  margin: 0.6rem 0 1rem;
-}
-
-/* ============================
-   TEXTO
-============================ */
-.review-text {
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.65;
-  font-weight: 400;
-  letter-spacing: 0.2px;
-}
-
-/* ============================
-   MOBILE
-============================ */
-@media (max-width: 768px) {
-  .reviews-section {
-    padding: 5rem 1.6rem;
-  }
-
-  .reviews-title {
-    font-size: 2.1rem;
-  }
-
-  .review-card {
-    padding: 1.8rem;
-  }
-}
-/* ============================
-   ANIMACIÓN PREMIUM TIPO OJIVA
-============================ */
-.fade-ojiva {
-  opacity: 0;
-  transform: translateY(30px) scale(0.96);
-  filter: blur(6px);
+  padding: 0.6rem 1.7rem;
   border-radius: 40px;
-  animation: fadeOjivaAnim 0.85s ease forwards;
-}
-
-@keyframes fadeOjivaAnim {
-  0% {
-    opacity: 0;
-    transform: translateY(30px) scale(0.96);
-    filter: blur(6px);
-    border-radius: 55px;
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-2px) scale(1.015);
-    border-radius: 23px;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-    border-radius: 20px;
-  }
-}
-
-/* Aparición escalonada */
-.reviews-grid .review-card:nth-child(1) { animation-delay: 0.05s; }
-.reviews-grid .review-card:nth-child(2) { animation-delay: 0.10s; }
-.reviews-grid .review-card:nth-child(3) { animation-delay: 0.15s; }
-.reviews-grid .review-card:nth-child(4) { animation-delay: 0.20s; }
-.reviews-grid .review-card:nth-child(5) { animation-delay: 0.25s; }
-.reviews-grid .review-card:nth-child(6) { animation-delay: 0.30s; }
-
-/* ============================
-   PAGINACIÓN PREMIUM ELEGANTE
-============================ */
-.reviews-pagination {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.page-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
   border: 2px solid #c5a56a;
   background: transparent;
   color: #c5a56a;
+  font-size: 0.92rem;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.35s ease;
-  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.reviews-tabs button:hover {
+  background: #c5a56a;
+  color: #fff;
+}
+
+.reviews-tabs .active {
+  background: #c5a56a;
+  color: #fff;
+}
+
+/* ================================
+   GRID — PERFECTAMENTE ELEGANTE
+================================ */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.7rem;
+  max-width: 1250px;
+  margin: 0 auto 2.5rem;
+  align-items: stretch; /* IMPORTANTE para uniformidad */
+}
+
+/* ================================
+   TARJETA AJUSTADA (MISMO TAMAÑO)
+================================ */
+.review-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid rgba(197,165,106,0.18);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+  transition: all 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 240px; /* equilibrado */
+}
+
+/* Hover */
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* ================================
+   ICONO
+================================ */
+.review-google-icon img {
+  width: 23px;
+  opacity: 0.9;
+  margin-bottom: 0.6rem;
+}
+
+/* ================================
+   HEADER (NOMBRE Y ESTRELLAS)
+================================ */
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.review-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.review-stars {
+  color: #f4b400;
+  font-size: 1rem;
+}
+
+/* ================================
+   FECHA
+================================ */
+.review-date {
+  margin-bottom: 0.6rem;
+  font-size: 0.82rem;
+  color: #8c8c8c;
+}
+
+/* ================================
+   TEXTO — MEJOR BLOQUE
+================================ */
+.review-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #333;
+  margin-top: auto;
+}
+
+/* ================================
+   PAGINACIÓN
+================================ */
+.reviews-pagination {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.page-btn {
+  background: transparent;
+  border: 2px solid #c5a56a;
+  padding: 0.45rem 0.9rem;
+  margin: 0 0.3rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #c5a56a;
+  cursor: pointer;
+  transition: 0.25s ease;
 }
 
 .page-btn:hover {
   background: #c5a56a;
   color: #fff;
-  transform: translateY(-2px);
 }
 
 .page-btn.active {
   background: #c5a56a;
   color: #fff;
-  box-shadow: 0 5px 14px rgba(0,0,0,0.15);
-  transform: translateY(-2px);
+  font-weight: 700;
 }
 
-/* ============================================================
-   900px — TABLET LANDSCAPE
-============================================================ */
-@media (max-width: 900px) {
-  .reviews-section {
-    padding: 6rem 2rem;
-  }
+/* ================================
+   ANIMACIONES
+================================ */
+.fade-transition {
+  animation: fadeIn 0.4s ease;
+}
 
-  .reviews-title {
-    font-size: 2.3rem;
-  }
+.fade-ojiva {
+  animation: riseFade 0.5s ease;
+}
 
-  .reviews-tabs button {
-    padding: 0.7rem 1.7rem;
-    font-size: 0.9rem;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
 
-  .review-card {
-    padding: 2rem;
-  }
+@keyframes riseFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 
-/* ============================================================
-   768px — TABLETS VERTICALES
-============================================================ */
-@media (max-width: 768px) {
-  .reviews-section {
-    padding: 5rem 1.6rem;
-  }
-
+/* ================================
+   RESPONSIVE FIX
+================================ */
+@media (max-width: 500px) {
   .reviews-title {
-    font-size: 2.1rem;
-    letter-spacing: 3px;
-  }
-
-  .reviews-tabs {
-    gap: 0.8rem;
+    font-size: 2rem;
   }
 
   .reviews-grid {
-    gap: 2rem;
+    grid-template-columns: 1fr;
   }
 
   .review-card {
-    padding: 1.8rem;
+    min-height: 220px;
   }
+}
+/* ================================
+   ANIMACIÓN USADA EN JSX: fade-slide
+================================ */
+.fade-slide {
+  animation: fadeSlide 0.5s ease forwards;
+  opacity: 0;
+}
 
-  .review-header h3 {
-    font-size: 1.1rem;
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
-
-  .review-text {
-    font-size: 0.95rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-
-/* ============================================================
-   600px — TELÉFONOS MEDIANOS
-============================================================ */
-@media (max-width: 600px) {
-  .reviews-title {
-    font-size: 1.9rem;
-  }
-
-  .reviews-tabs button {
-    padding: 0.65rem 1.5rem;
-    font-size: 0.85rem;
-  }
-
-  .review-card {
-    padding: 1.6rem;
-  }
-
-  .review-google-icon img {
-    width: 30px;
-  }
-
-  .review-header h3 {
-    font-size: 1.05rem;
-  }
-
-  .review-stars {
-    font-size: 1.05rem;
-  }
-
-  .review-text {
-    font-size: 0.92rem;
-    line-height: 1.6;
-  }
-
-  .reviews-pagination {
-    gap: 0.6rem;
-  }
-
-  .page-btn {
-    width: 32px;
-    height: 32px;
-  }
-}
-
-
-/* ============================================================
-   480px — SMARTPHONES PEQUEÑOS (iPhone SE, Galaxy S8)
-============================================================ */
-@media (max-width: 480px) {
-  .reviews-section {
-    padding: 4.2rem 1.3rem;
-  }
-
-  .reviews-title {
-    font-size: 1.75rem;
-  }
-
-  .reviews-tabs button {
-    padding: 0.55rem 1.3rem;
-    font-size: 0.82rem;
-  }
-
-  .reviews-grid {
-    gap: 1.6rem;
-  }
-
-  .review-card {
-    padding: 1.45rem;
-    border-radius: 18px;
-  }
-
-  .review-text {
-    font-size: 0.9rem;
-  }
-
-  .page-btn {
-    width: 30px;
-    height: 30px;
-    font-size: 0.82rem;
-  }
-}
-
-
-/* ============================================================
-   414px — iPhone 12–15 y Samsung modernos
-============================================================ */
-@media (max-width: 414px) {
-  .reviews-title {
-    font-size: 1.65rem;
-    letter-spacing: 2px;
-  }
-
-  .reviews-tabs button {
-    padding: 0.5rem 1.1rem;
-    border-width: 1.8px;
-  }
-
-  .review-card {
-    padding: 1.35rem;
-  }
-
-  .review-header h3 {
-    font-size: 1rem;
-  }
-
-  .review-date {
-    font-size: 0.87rem;
-  }
-}
-
-
-/* ============================================================
-   360px — ANDROID COMPACTO
-============================================================ */
-@media (max-width: 360px) {
-  .reviews-section {
-    padding: 3.6rem 1.1rem;
-  }
-
-  .reviews-title {
-    font-size: 1.55rem;
-  }
-
-  .reviews-tabs {
-    gap: 0.5rem;
-  }
-
-  .reviews-tabs button {
-    padding: 0.45rem 1rem;
-    font-size: 0.78rem;
-    letter-spacing: 1px;
-  }
-
-  .review-card {
-    padding: 1.2rem;
-  }
-
-  .review-header h3 {
-    font-size: 0.95rem;
-  }
-
-  .review-text {
-    font-size: 0.85rem;
-  }
-
-  .page-btn {
-    width: 28px;
-    height: 28px;
-    font-size: 0.78rem;
-  }
-}

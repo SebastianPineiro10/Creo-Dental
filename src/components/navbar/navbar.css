@@ -10,7 +10,6 @@
   padding: 0.8rem 2.5rem;
   font-family: 'Montserrat', sans-serif;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  overflow: visible;
   transition: all 0.3s ease;
 }
 
@@ -21,10 +20,9 @@
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
-  position: relative;
 }
 
-/* ===== LÍNEA DORADA INFERIOR ===== */
+/* ===== LÍNEA DORADA ===== */
 .navbar::after {
   content: "";
   position: absolute;
@@ -35,12 +33,9 @@
   background: linear-gradient(to right, #2f1f08 0%, #b88a1a 50%, #2f1f08 100%);
   animation: drawLine 1.2s ease-out forwards;
   border-radius: 999px;
-  opacity: 0.9;
 }
 
-@keyframes drawLine {
-  to { width: 100%; }
-}
+@keyframes drawLine { to { width: 100%; } }
 
 /* ===== LOGO ===== */
 .logo-img {
@@ -50,7 +45,9 @@
   transition: transform 0.35s ease;
 }
 
-.logo-img:hover { transform: scale(1.05); }
+.logo-img:hover {
+  transform: scale(1.05);
+}
 
 /* ===== LINKS DESKTOP ===== */
 .navbar-links {
@@ -58,9 +55,9 @@
   display: flex;
   gap: 2.5rem;
   margin: 0;
-  padding: 0;
 }
 
+/* Links */
 .navbar-links a,
 .dropdown-toggle {
   text-decoration: none;
@@ -74,7 +71,7 @@
   transition: color 0.3s ease;
 }
 
-/* Hover — subrayado fusión dorada */
+/* Hover underline */
 .navbar-links a::after,
 .dropdown-toggle::after,
 .dropdown-item::after {
@@ -84,10 +81,9 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #2f1f08 0%, #b88a1a 50%, #2f1f08 100%);
+  background: linear-gradient(to right, #2f1f08, #b88a1a, #2f1f08);
   border-radius: 999px;
   transition: width 0.35s ease, left 0.35s ease;
-  opacity: 0.95;
 }
 
 .navbar-links a:hover::after,
@@ -97,44 +93,32 @@
   left: 0;
 }
 
-.navbar-links a:hover,
-.dropdown-toggle:hover,
-.dropdown-item:hover {
-  color: #000;
-}
-
 /* ===== DROPDOWN ===== */
-.dropdown {
-  position: relative;
-}
+.dropdown { position: relative; }
 
 .dropdown-menu {
   position: absolute;
   top: 2.8rem;
   left: 0;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 14px;
   min-width: 240px;
   padding: 1rem 1.2rem;
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
-  animation: dropdownFloat 0.25s ease;
+
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 14px;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+
+  animation: dropdownFloat 0.25s ease;
   z-index: 9999;
 }
 
 @keyframes dropdownFloat {
-  from {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .dropdown-item {
@@ -145,11 +129,6 @@
   font-weight: 500;
   letter-spacing: 0.6px;
   transition: all 0.35s ease;
-}
-
-.dropdown-item:hover {
-  color: #000;
-  transform: translateX(3px);
 }
 
 /* ===== BOTÓN HAMBURGUESA ===== */
@@ -166,15 +145,22 @@
   position: fixed;
   top: 0;
   left: 0;
+
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+
+  overflow-x: hidden; /* 🔥 Evita movimiento lateral */
+  overflow-y: auto;
+
   background: rgba(0, 0, 0, 0.96);
   display: flex;
   justify-content: center;
   align-items: center;
+
   transform: translateY(-100%);
   opacity: 0;
-  transition: transform 0.6s ease, opacity 0.6s ease;
+
+  transition: transform 0.55s ease, opacity 0.55s ease;
   z-index: 1000;
 }
 
@@ -202,22 +188,12 @@
   transition: all 0.3s ease;
 }
 
-.mobile-menu a:hover {
-  color: goldenrod;
-  transform: scale(1.05);
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .navbar-links {
-    display: none;
-  }
+  .navbar-links { display: none; }
+  .menu-toggle { display: block; }
 
-  .menu-toggle {
-    display: block;
-  }
+  .navbar { padding: 0.8rem 1.2rem; }
 
-  .dropdown-menu {
-    display: none;
-  }
+  .logo-img { height: 85px; }
 }

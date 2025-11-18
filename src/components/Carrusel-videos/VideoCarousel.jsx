@@ -5,19 +5,17 @@ function VideoCarousel() {
   // MEMO evita recalcular la lista completa en cada render
   const slides = useMemo(
     () => [
-      { type: "image", src: "/videos-cliente-fernando/img-1.jpeg" },
-      { type: "image", src: "/videos-cliente-fernando/img-2.jpeg" },
-      { type: "video", src: "/videos-cliente-fernando/video-1.mp4" },
-      { type: "video", src: "/videos-cliente-fernando/video-2.mp4" },
-      { type: "video", src: "/videos-cliente-fernando/video-3.mp4" },
+      { type: "image", src: "/videos-cliente-fernando/alineadores.png" },
+      { type: "image", src: "/videos-cliente-fernando/alineadoress.png" },
+      { type: "video", src: "/videos-cliente-fernando/allon4.jpg" },
 
       // TRATAMIENTOS
       { type: "image", src: "/videos-cliente-fernando/alineadores.png" },
       { type: "image", src: "/tratamiento/alineadoress.png" },
       { type: "image", src: "/tratamiento/allon4.jpg" },
       { type: "image", src: "/tratamiento/allonx.jpg" },
+      { type: "image", src: "/tratamiento/allonx.png" },
       { type: "image", src: "/tratamiento/blanqueamiento.png" },
-      { type: "image", src: "/tratamiento/carillas.png" },
       { type: "image", src: "/tratamiento/carillas0.png" },
       { type: "image", src: "/tratamiento/carillas1.png" },
       { type: "image", src: "/tratamiento/carillas2.png" },
@@ -27,10 +25,12 @@ function VideoCarousel() {
       { type: "image", src: "/tratamiento/carillas6.png" },
       { type: "image", src: "/tratamiento/carillas7.png" },
       { type: "image", src: "/tratamiento/cirugiaguiada.png" },
-      { type: "image", src: "/tratamiento/diseñodesonrisa.jpg" },
+      { type: "image", src: "/tratamiento/diseñodesonrisa.png" },
+      { type: "image", src: "/tratamiento/diseñosonrisa.jpg" },
       { type: "image", src: "/tratamiento/endodoncia.png" },
-      { type: "image", src: "/tratamiento/escaneointraoral.jpg" },
-      { type: "image", src: "/tratamiento/fotoestetica.jpg" },
+      { type: "image", src: "/tratamiento/endodoncia.png" },
+      { type: "image", src: "/tratamiento/escaneointraoral.jpg"},
+      { type: "image", src: "/tratamiento/fotoestetica.jpg"}
     ],
     []
   );
