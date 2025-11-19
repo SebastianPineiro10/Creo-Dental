@@ -1,7 +1,7 @@
 import "./PhoneCallButton.css";
 import { Phone } from "lucide-react";
 
-function PhoneCallButton({ phone = "+1 " }) {
+function PhoneCallButton({ phone = "+1 915 875-2441. " }) {
   return (
     <a
       href={`tel:${phone}`}

@@ -8,15 +8,20 @@
   --wb-tooltip-color: #f5f5f5;
 }
 
-/* --- Contenedor principal --- */
+/* --- Botón principal WhatsApp --- */
 .whatsapp-float {
   position: fixed;
+  bottom: 18px;
+  left: 22px;                 /* → BOTÓN A LA IZQUIERDA */
   z-index: 9999;
+
+  width: var(--wb-size);
+  height: var(--wb-size);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--wb-size);
-  height: var(--wb-size);
+
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #1a1a1a 0%, #0e0e0e 85%);
   border: 2px solid var(--wb-gold);
@@ -24,10 +29,6 @@
   transition: all 0.3s ease;
   overflow: visible;
 }
-
-/* --- Posición --- */
-.wb-left { left: 22px; }
-.wb-right { right: 22px; }
 
 /* --- Ícono --- */
 .wb-icon {
@@ -38,21 +39,7 @@
   filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.25));
 }
 
-/* --- Aro blanco elegante --- */
-.wb-outline {
-  position: absolute;
-  inset: -5px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.75);
-  box-shadow:
-    0 0 10px rgba(255, 255, 255, 0.3),
-    0 0 25px rgba(212, 175, 55, 0.3);
-  z-index: 1;
-  animation: wbOutlinePulse 4.2s ease-in-out infinite;
-  pointer-events: none;
-}
-
-/* --- Halo dorado --- */
+/* --- Halo dorado animado --- */
 .wb-ring {
   position: absolute;
   inset: -2px;
@@ -63,75 +50,57 @@
   z-index: 2;
 }
 
-/* --- Brillo difuso --- */
-.wb-glow {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  box-shadow:
-    0 0 8px rgba(255, 255, 255, 0.2),
-    0 0 22px rgba(212, 175, 55, 0.3);
-  opacity: 0.5;
-  animation: wbGlow 5s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* --- Animaciones --- */
-@keyframes wbOutlinePulse {
-  0%,100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.05); opacity: 0.9; }
-}
-
 @keyframes wbRingPulse {
   0%,100% { transform: scale(1); opacity: 0.5; }
   50% { transform: scale(1.1); opacity: 0.8; }
 }
 
-@keyframes wbGlow {
-  0% { opacity: 0.3; filter: brightness(1); }
-  50% { opacity: 0.6; filter: brightness(1.25); }
-  100% { opacity: 0.3; filter: brightness(1); }
-}
-
-/* --- Hover --- */
-.whatsapp-float:hover {
-  transform: translateY(-2px);
-  background: radial-gradient(circle at 30% 30%, #1b1b1b 0%, #080808 100%);
+/* --- Glow --- */
+.wb-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
   box-shadow:
-    0 0 12px rgba(255, 255, 255, 0.25),
-    0 0 28px rgba(212, 175, 55, 0.4);
+    0 0 8px rgba(255,255,255,0.2),
+    0 0 22px rgba(212,175,55,0.3);
+  animation: wbGlow 5s ease-in-out infinite;
 }
 
-/* --- Tooltip --- */
+@keyframes wbGlow {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.3; }
+}
+
+/* --- Tooltip (alineado y perfecto) --- */
 .wb-tooltip {
   position: absolute;
+
+  /* Tooltip sale a la DERECHA */
   left: calc(100% + 12px);
+  right: auto;
+
   top: 50%;
   transform: translateY(-50%);
+
   background: var(--wb-tooltip-bg);
   color: var(--wb-tooltip-color);
+
   padding: 8px 12px;
   font-size: 12px;
+
   border-radius: 6px;
   border: 1px solid var(--wb-gold);
-  opacity: 0;
-  pointer-events: none;
+
   white-space: nowrap;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  transition: all 0.2s ease;
-  z-index: 5;
-}
-.whatsapp-float:hover .wb-tooltip {
-  opacity: 1;
-  transform: translate(4px, -50%);
+  opacity: 0;
+  transition: 0.2s ease;
+  z-index: 10;
 }
 
-/* --- Accesibilidad --- */
-@media (prefers-reduced-motion: reduce) {
-  .wb-outline, .wb-ring, .wb-glow {
-    animation: none;
-  }
+.whatsapp-float:hover .wb-tooltip {
+  opacity: 1;
+  transform: translate(calc(100% - 4px), -50%);
 }
 
 /* --- Responsive --- */
