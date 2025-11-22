@@ -2,7 +2,7 @@ import "./especialistas.css";
 
 function Especialistas() {
   return (
-    <section className="especialistas-section fade-section">
+   <section className="especialistas-section fade-in">
       <h1 className="especialistas-title">Nuestro Equipo de Especialistas</h1>
       <p className="especialistas-subtitle">
       El <strong>Dr. Fernando Muñoz Zini</strong> y la <strong>Dra. Selene Gutiérrez Dávila</strong> comparten una misma visión: crear un espacio donde la odontología combine tecnología, calidez y confianza.
