@@ -149,21 +149,18 @@
 }
 
 @media (max-width: 700px) {
-  .especialistas-title {
-    font-size: 1.9rem;       /* Tamaño exacto para evitar saltos raros */
-    line-height: 1.2;        /* Compacto y elegante */
-    max-width: 90%;          /* Evita que se desborde */
-    margin: 0 auto 1.6rem;   /* Centrado perfecto */
-    word-break: break-word;  /* Forzar que divida bien el texto */
-    text-align: center;      /* Asegura alineación */
+  .especialistas-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
-  .especialistas-subtitle {
-    font-size: 1rem;
-    max-width: 92%;
-    margin-bottom: 2.8rem;
-    line-height: 1.6;
-    text-align: center;
+  .especialista-card {
+    max-width: 100%;
+  }
+
+  .especialista-card h3,
+  .especialista-card p {
+    padding: 0 1.5rem;
   }
 }
 
@@ -258,9 +255,3 @@
     gap: 2.5rem;
   }
 }
-.especialistas-grid {
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-}
-
-
