@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import "./navbar.css";
 
@@ -7,25 +7,27 @@ function Navbar() {
   const location = useLocation();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const closeTimeout = useRef(null);
 
-  let closeTimeout;
   const handleMouseEnter = () => {
-    clearTimeout(closeTimeout);
+    clearTimeout(closeTimeout.current);
     setIsDropdownOpen(true);
   };
+
   const handleMouseLeave = () => {
-    closeTimeout = setTimeout(() => setIsDropdownOpen(false), 120);
+    closeTimeout.current = setTimeout(() => setIsDropdownOpen(false), 120);
   };
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
+    setIsMenuOpen((prev) => !prev);
+    document.body.style.overflow = !isMenuOpen ? "hidden" : "auto";
   };
 
   return (
     <nav className="navbar" key={location.pathname}>
       <div className="navbar-container">
-        {/* ---------- LOGO ---------- */}
+
+        {/* LOGO */}
         <div className="navbar-logo">
           <Link to="/">
             <img
@@ -36,7 +38,7 @@ function Navbar() {
           </Link>
         </div>
 
-        {/* ---------- LINKS DESKTOP ---------- */}
+        {/* LINKS DESKTOP */}
         <ul className="navbar-links">
           <li><Link to="/services">Servicios</Link></li>
 
@@ -48,33 +50,25 @@ function Navbar() {
             <span className="dropdown-toggle">Sucursales ▾</span>
             {isDropdownOpen && (
               <div className="dropdown-menu">
-                <Link to="/sucursal/juarez" className="dropdown-item">
-                  Clínica Juárez
-                </Link>
-                <Link to="/sucursal/americas" className="dropdown-item">
-                  Clínica Américas
-                </Link>
+                <Link to="/sucursal/juarez" className="dropdown-item">Clínica Juárez</Link>
+                <Link to="/sucursal/americas" className="dropdown-item">Clínica Américas</Link>
               </div>
             )}
           </li>
 
-          {/* ---------- NUEVO ENLACE “ESPECIALISTAS” ---------- */}
           <li><Link to="/especialistas">Especialistas</Link></li>
-
+          <li><Link to="/aseguranzas">Aseguranzas</Link></li>
           <li><Link to="/contact">Contacto</Link></li>
         </ul>
 
-        {/* ---------- BOTÓN HAMBURGUESA ---------- */}
+        {/* MENÚ HAMBURGUESA */}
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Menú">
-          {isMenuOpen ? (
-            <X size={28} color="goldenrod" />
-          ) : (
-            <Menu size={28} color="goldenrod" />
-          )}
+          {isMenuOpen ? <X size={28} color="#b88a1a" /> : <Menu size={28} color="#b88a1a" />}
         </button>
+
       </div>
 
-      {/* ---------- MENÚ MÓVIL ---------- */}
+      {/* MENÚ MÓVIL */}
       <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
         <ul>
           <li><Link to="/" onClick={toggleMenu}>Inicio</Link></li>
@@ -82,6 +76,7 @@ function Navbar() {
           <li><Link to="/sucursal/juarez" onClick={toggleMenu}>Clínica Juárez</Link></li>
           <li><Link to="/sucursal/americas" onClick={toggleMenu}>Clínica Américas</Link></li>
           <li><Link to="/especialistas" onClick={toggleMenu}>Especialistas</Link></li>
+          <li><Link to="/aseguranzas" onClick={toggleMenu}>Aseguranzas</Link></li>
           <li><Link to="/contact" onClick={toggleMenu}>Contacto</Link></li>
           <li>
             <a

@@ -12,9 +12,12 @@ import SucursalAmericas from "./pages/sucursal-americas/Americas";
 
 // Especialistas
 import Especialistas from "./pages/especialistas/Especialistas.jsx";
+
+// 🔥 Aseguranzas
+import Aseguranzas from "./pages/aseguranzas/aseguranzas.jsx";
+
 import PhoneFloat from "./components/PhoneCallButton/PhoneCallButton.jsx";
 
-// Layout base
 function MainLayout({ children }) {
   return (
     <>
@@ -29,6 +32,8 @@ function App() {
   return (
     <Router>
       <Routes>
+
+        {/* HOME */}
         <Route
           path="/"
           element={
@@ -39,6 +44,8 @@ function App() {
             </MainLayout>
           }
         />
+
+        {/* SERVICIOS */}
         <Route
           path="/services"
           element={
@@ -47,6 +54,8 @@ function App() {
             </MainLayout>
           }
         />
+
+        {/* CONTACTO */}
         <Route
           path="/contact"
           element={
@@ -55,6 +64,8 @@ function App() {
             </MainLayout>
           }
         />
+
+        {/* SUCURSAL JUAREZ */}
         <Route
           path="/sucursal/juarez"
           element={
@@ -67,6 +78,8 @@ function App() {
             </MainLayout>
           }
         />
+
+        {/* SUCURSAL AMERICAS */}
         <Route
           path="/sucursal/americas"
           element={
@@ -79,6 +92,8 @@ function App() {
             </MainLayout>
           }
         />
+
+        {/* ESPECIALISTAS */}
         <Route
           path="/especialistas"
           element={
@@ -91,6 +106,21 @@ function App() {
             </MainLayout>
           }
         />
+
+        {/*  ASEGURANZAS */}
+        <Route
+          path="/aseguranzas"
+          element={
+            <MainLayout>
+              <Aseguranzas />
+              <WhatsappFloat
+                phone="526563116130"
+                message="Hola, quisiera validar mi aseguranza dental."
+              />
+            </MainLayout>
+          }
+        />
+
       </Routes>
     </Router>
   );

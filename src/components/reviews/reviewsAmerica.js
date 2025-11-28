@@ -1,3 +1,5 @@
+// src/components/reviews/reviewsAmerica.js
+
 export const reviewsAmericas = [
   {
     name: "Carla Acero",
