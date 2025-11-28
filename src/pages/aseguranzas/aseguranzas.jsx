@@ -2,7 +2,6 @@ import "./aseguranzas.css";
 import {
   ShieldCheck,
   Phone,
-  MessageCircleMore,
   CheckCircle2,
 } from "lucide-react";
 
@@ -11,7 +10,7 @@ function Aseguranzas() {
     <section className="aseguranzas-section">
 
       {/* ===============================
-          HERO PREMIUM SOBRE FONDO DIVIDIDO
+          HERO PREMIUM
       =============================== */}
       <div className="aseguranzas-hero-wrapper">
         <img
@@ -22,7 +21,7 @@ function Aseguranzas() {
 
         <div className="aseguranzas-hero-content">
           <h2 className="aseguranzas-hero-title">
-            <ShieldCheck size={28} className="aseguranzas-hero-icon" />
+            <ShieldCheck size={32} className="aseguranzas-hero-icon" />
             Aseguranzas que Aceptamos
           </h2>
 
@@ -43,7 +42,9 @@ function Aseguranzas() {
           Trabajamos con aseguradoras de México y Estados Unidos.
         </p>
 
-        {/* GRID */}
+        {/* ===============================
+            CUADROS PREMIUM
+        =============================== */}
         <div className="aseguranzas-grid">
           {[
             "Delta Dental", "Cigna", "Aetna", "MetLife", "Humana",
@@ -59,36 +60,44 @@ function Aseguranzas() {
           ))}
         </div>
 
-        {/* IMPORTANTE */}
-        <div className="aseguranzas-benefits">
-          <h2>Antes de su cita</h2>
-          <ul>
-            <li>
-              <CheckCircle2 className="benefit-icon" />
-              Le recomendamos llamarnos para confirmar si aceptamos su seguro.
-            </li>
-            <li>
-              <CheckCircle2 className="benefit-icon" />
-              También puede consultar con su proveedor la cobertura del procedimiento.
-            </li>
-          </ul>
+        {/* ===============================
+            BLOQUE PREMIUM A LA IZQUIERDA
+        =============================== */}
+        <div className="aseguranzas-double-box">
+
+          {/* Caja izquierda */}
+          <div className="aseguranzas-box black">
+            <h2>Antes de su cita</h2>
+            <ul>
+              <li>
+                <CheckCircle2 className="benefit-icon" />
+                Le recomendamos llamarnos para confirmar si aceptamos su seguro.
+              </li>
+              <li>
+                <CheckCircle2 className="benefit-icon" />
+                También puede consultar con su proveedor la cobertura del procedimiento.
+              </li>
+            </ul>
+          </div>
+
+          {/* Caja derecha */}
+          <div className="aseguranzas-box gold">
+            <h2>¿Desea validar su aseguranza?</h2>
+            <p>
+              Nuestro equipo está listo para apoyarle con claridad,
+              rapidez y profesionalismo.
+            </p>
+
+            <a
+              href="tel:9158752441"
+              className="aseguranzas-button dark"
+            >
+              <Phone size={20} />
+              Llamar a Creo Dental
+            </a>
+          </div>
+
         </div>
-
-        {/* CTA */}
-    <div className="aseguranzas-cta">
-    <h3>¿Desea validar su aseguranza?</h3>
-    <p>
-        Nuestro equipo está listo para apoyarle con claridad, rapidez y profesionalismo.
-    </p>
-
-    {/* CONTENEDOR FLEX REAL */}
-    <div className="aseguranzas-buttons-row">
-        <a href="tel:9158752441" className="aseguranzas-button">
-        <Phone size={18} />
-        Llamar a Creo Dental
-        </a>
-    </div>
-    </div>
 
       </div>
     </section>

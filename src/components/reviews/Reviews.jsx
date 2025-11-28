@@ -33,6 +33,8 @@ function Reviews() {
 
   return (
     <section className="reviews-section">
+
+      {/* TÍTULO */}
       <div className="reviews-header">
         <h2 className="reviews-title">Reseñas de Google</h2>
 
@@ -57,13 +59,16 @@ function Reviews() {
       <div key={fadeKey} className="reviews-grid fade-slide">
         {currentReviews.map((review, index) => (
           <div className="review-card" key={index}>
+
             <div className="review-google-icon">
               <img src="/reviews/google-letra.svg" alt="Google logo" />
             </div>
 
             <div className="review-header">
               <h3>{review.name}</h3>
-              <span className="review-stars">{"⭐".repeat(review.stars)}</span>
+              <span className="review-stars">
+                {"⭐".repeat(review.stars)}
+              </span>
             </div>
 
             <p className="review-date">{review.date}</p>
@@ -72,6 +77,7 @@ function Reviews() {
         ))}
       </div>
 
+      {/* PAGINACIÓN */}
       {totalPages > 1 && (
         <div className="reviews-pagination">
           {Array.from({ length: totalPages }).map((_, i) => (
