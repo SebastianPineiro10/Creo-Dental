@@ -21,7 +21,6 @@ function Aseguranzas() {
 
         <div className="aseguranzas-hero-content">
           <h2 className="aseguranzas-hero-title">
-            <ShieldCheck size={32} className="aseguranzas-hero-icon" />
             Aseguranzas que Aceptamos
           </h2>
 

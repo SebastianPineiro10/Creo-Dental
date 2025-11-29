@@ -29,10 +29,12 @@
   box-shadow: 0 30px 60px rgba(0,0,0,0.16);
 }
 
+/* === CORRECCIÓN PRINCIPAL === */
+/* La imagen ahora se muestra COMPLETA sin recortes */
 .aseguranzas-hero-img {
   width: 100%;
-  height: 420px;
-  object-fit: cover;
+  height: auto;              /* ← Se adapta a su proporción */
+  object-fit: contain;       /* ← Nunca corta la imagen */
   object-position: center;
   filter: brightness(0.78);
   transition: 0.4s ease;
@@ -62,7 +64,7 @@
 }
 
 .aseguranzas-hero-icon {
-  color: black;
+  color: #c5a56a;
 }
 
 .aseguranzas-hero-sub {
@@ -129,12 +131,14 @@
   box-shadow: 0 16px 35px rgba(0,0,0,0.12);
 }
 
+/* Panel negro premium */
 .aseguranzas-box.black {
   background: #0d0d0d;
   color: #fff;
   border-left: 8px solid #c5a56a;
 }
 
+/* Panel dorado elegante */
 .aseguranzas-box.gold {
   background: #f8f3ea;
   color: #1a1a1a;
@@ -153,8 +157,8 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 0.85rem;
-  color: #ddd;
   font-size: 1.05rem;
+  color: #ddd;
 }
 
 .aseguranzas-box.gold li {
@@ -194,6 +198,15 @@
    RESPONSIVE
 ================================ */
 @media (max-width: 768px) {
+  .aseguranzas-hero-title {
+    font-size: 2rem;
+  }
+
+  .aseguranzas-hero-content {
+    left: 20px;
+    bottom: 22px;
+  }
+
   .aseguranzas-double-box {
     grid-template-columns: 1fr;
   }
