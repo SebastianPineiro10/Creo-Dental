@@ -12,7 +12,7 @@ export const aseguranzasData = [
   { nombre: "Guardian Life", logo: "/aseguranzas/cigna healthcare.png" },
   { nombre: "Ameritas", logo: "/aseguranzas/Delta-Dental.jpg" },
   { nombre: "DentaQuest", logo: "/aseguranzas/Denta-Quest.png" },
-  { nombre: "United Concordia", logo: "/aseguranzas/United Concordia Dental.png" },
+  { nombre: "United Concordia", logo: "/aseguranzas/United-Concordia-Dental.png" },
   { nombre: "Renaissance Dental", logo: "/aseguranzas/Renaissance-Dental.png" },
   { nombre: "GEHA", logo: "/aseguranzas/Geha-logo.png" },
   { nombre: "Principal Financial Group", logo: "/aseguranzas/guardian.webp" },
