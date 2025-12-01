@@ -4,18 +4,18 @@ import "./VideoCarousel.css";
 function VideoCarousel() {
   const slides = useMemo(
     () => [
-      { type: "image", src: "/videos-cliente/img-1.jpeg" },
-      { type: "image", src: "/videos-cliente/img-2.jpeg" },
-      { type: "video", src: "/videos-cliente/video-1.mp4" },
-      { type: "video", src: "/videos-cliente/video-2.mp4" },
-      { type: "video", src: "/videos-cliente/video-3.mp4" },
-      { type: "video", src: "/videos-cliente/video-4.mp4" },
-
+      // IMÁGENES
       { type: "image", src: "/tratamiento/alineadores.png" },
       { type: "image", src: "/tratamiento/alineadoress.png" },
+
+      // VIDEOS (usa tus archivos reales .mp4)
+      { type: "video", src: "/videos/video-1.mp4", poster: "/videos/poster-1.jpg" },
+      { type: "video", src: "/videos/video-2.mp4", poster: "/videos/poster-2.jpg" },
+      { type: "video", src: "/videos/video-3.mp4", poster: "/videos/poster-3.jpg" },
+
+      // IMÁGENES EXTRAS
       { type: "image", src: "/tratamiento/allon4.jpg" },
       { type: "image", src: "/tratamiento/allonx.jpg" },
-      { type: "image", src: "/tratamiento/allonx.png" },
       { type: "image", src: "/tratamiento/blanqueamiento.png" },
 
       { type: "image", src: "/tratamiento/carillas0.png" },
@@ -28,19 +28,23 @@ function VideoCarousel() {
       { type: "image", src: "/tratamiento/carillas7.png" },
 
       { type: "image", src: "/tratamiento/cirugiaguiada.png" },
+      { type: "image", src: "/tratamiento/diseñodesonrisa.jpg" },
       { type: "image", src: "/tratamiento/diseñodesonrisa.png" },
-      { type: "image", src: "/tratamiento/diseñosonrisa.jpg" },
 
       { type: "image", src: "/tratamiento/endodoncia.png" },
-
       { type: "image", src: "/tratamiento/escaneointraoral.jpg" },
-      { type: "image", src: "/tratamiento/fotoestetica.jpeg" }
+      { type: "image", src: "/tratamiento/fotoestetica.jpg" },
+
+      // OTRAS IMÁGENES
+      { type: "image", src: "/videos/img-1.jpeg" },
+      { type: "image", src: "/videos/img-2.jpeg" }
     ],
     []
   );
 
   const [current, setCurrent] = useState(0);
 
+  // AUTO-SLIDE
   useEffect(() => {
     const interval = setInterval(
       () => setCurrent((prev) => (prev + 1) % slides.length),
@@ -62,11 +66,25 @@ function VideoCarousel() {
             {slides.map((slide, index) => (
               <div className="carousel-item" key={index}>
                 <div className="carousel-content">
+                  
                   {slide.type === "video" ? (
-                    <video src={slide.src} controls muted preload="metadata" playsInline />
+                    <video
+                      src={slide.src}
+                      poster={slide.poster}
+                      muted
+                      loop
+                      autoPlay
+                      playsInline
+                      className="carousel-video"
+                    />
                   ) : (
-                    <img src={slide.src} alt={`slide-${index}`} loading="lazy" />
+                    <img
+                      src={slide.src}
+                      alt={`slide-${index}`}
+                      loading="lazy"
+                    />
                   )}
+
                 </div>
               </div>
             ))}
