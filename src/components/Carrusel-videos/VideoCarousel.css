@@ -104,7 +104,6 @@
   border-radius: 50%;
   background: #bbbbbb;
   cursor: pointer;
-
   transition: all 0.3s ease;
 }
 
@@ -134,13 +133,34 @@
 }
 
 @media (max-width: 600px) {
-  .carousel-item { height: 300px; }
-  .carousel-dots { margin-top: 1.8rem; }
+  .carousel-item {
+    height: 300px;
+  }
+
+  .carousel-dots {
+    margin-top: 1.8rem;
+
+    /* 🔹 FIX: que las bolitas NO generen scroll horizontal */
+    flex-wrap: wrap;
+    gap: 12px 14px;
+    padding: 0 1.2rem;
+    max-width: 100%;
+  }
+
+  .dot {
+    width: 18px;
+    height: 18px;
+  }
+
+  .dot.active {
+    transform: scale(1.35);
+    box-shadow: 0 0 10px rgba(202, 164, 91, 0.7);
+  }
 }
 
 @media (max-width: 480px) {
   .carousel-item { height: 260px; }
-  .carousel-dots { gap: 18px; margin-top: 1.6rem; }
+  .carousel-dots { gap: 12px 12px; margin-top: 1.6rem; }
 }
 
 @media (max-width: 414px) {
@@ -151,4 +171,31 @@
 @media (max-width: 360px) {
   .carousel-item { height: 220px; }
   .carousel-dots { margin-top: 1.4rem; }
+}
+
+/* ======================================
+   FIX GLOBAL MOBILE — evita corte y scroll horizontal
+====================================== */
+@media (max-width: 768px) {
+  .hero-carousel {
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    width: 100%;
+  }
+
+  .carousel-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .carousel-content img,
+  .carousel-content video {
+    border-radius: 16px;
+  }
+
+  .video-carousel-section {
+    padding: 2rem 0.6rem;
+  }
 }

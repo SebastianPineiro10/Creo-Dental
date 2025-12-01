@@ -5,26 +5,25 @@ import { aseguranzasData } from "../aseguranzas/aseguranzasData.js";
 
 function Aseguranzas() {
 
-  // ANIMACIONES DE ENTRADA (sin librerías)
+  // Animaciones fade-up
   useEffect(() => {
     const elements = document.querySelectorAll(".fade-up");
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
+          if (entry.isIntersecting) entry.target.classList.add("visible");
         });
       },
       { threshold: 0.2 }
     );
+
     elements.forEach(el => observer.observe(el));
   }, []);
 
   return (
     <section className="aseguranzas-section">
 
-      {/* ==================== HERO ==================== */}
+      {/* ========== HERO ========== */}
       <div className="aseguranzas-hero-wrapper fade-up">
         <img
           src="https://res.cloudinary.com/dcerhiol0/image/upload/v1764298877/WhatsApp_Image_2025-11-17_at_21.09.49_hqhaui.jpg"
@@ -41,14 +40,15 @@ function Aseguranzas() {
         </div>
       </div>
 
-      {/* ==================== CONTENIDO ==================== */}
+      {/* ========== CONTENIDO PRINCIPAL ========== */}
       <div className="aseguranzas-container fade-up">
+
         <p className="aseguranzas-subtitle">
           Trabajamos con una selección amplia de aseguranzas para brindarle claridad,
           respaldo y una atención verdaderamente profesional.
         </p>
 
-        {/* ==================== MARCAS ==================== */}
+        {/* ========== GRID DESKTOP PREMIUM ========== */}
         <div className="aseguranzas-grid fade-up">
           {aseguranzasData.map((seguro, i) => (
             <div key={i} className="aseguranza-item">
@@ -65,9 +65,8 @@ function Aseguranzas() {
           ))}
         </div>
 
-        {/* ==================== BLOQUES EDITORIALES ==================== */}
+        {/* ========== BLOQUES EDITORIALES ========== */}
         <div className="aseguranzas-double-box">
-
           <div className="aseguranzas-box fade-up">
             <h2>Antes de su cita</h2>
             <ul>
@@ -75,6 +74,7 @@ function Aseguranzas() {
                 <CheckCircle2 className="benefit-icon" />
                 Llámenos para confirmar si su aseguranza está cubierta.
               </li>
+
               <li>
                 <CheckCircle2 className="benefit-icon" />
                 Consulte con su proveedor los beneficios y restricciones de su plan.
@@ -85,7 +85,7 @@ function Aseguranzas() {
           <div className="aseguranzas-box fade-up">
             <h2>Validación de cobertura</h2>
             <p className="aseguranzas-text">
-              Nuestro equipo puede ayudarle a verificar su aseguranza con claridad 
+              Nuestro equipo puede ayudarle a verificar su aseguranza con claridad
               y profesionalismo, para que llegue a su cita con total tranquilidad.
             </p>
 
@@ -94,10 +94,9 @@ function Aseguranzas() {
               Aseguranzas
             </a>
           </div>
-
         </div>
-      </div>
 
+      </div>
     </section>
   );
 }

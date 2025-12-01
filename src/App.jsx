@@ -13,7 +13,7 @@ import SucursalAmericas from "./pages/sucursal-americas/Americas";
 // Especialistas
 import Especialistas from "./pages/especialistas/Especialistas.jsx";
 
-// 🔥 Aseguranzas
+// Aseguranzas
 import Aseguranzas from "./pages/aseguranzas/aseguranzas.jsx";
 
 import PhoneFloat from "./components/PhoneCallButton/PhoneCallButton.jsx";
@@ -27,6 +27,8 @@ function MainLayout({ children }) {
     </>
   );
 }
+
+
 
 function App() {
   return (

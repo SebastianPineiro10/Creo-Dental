@@ -1,4 +1,6 @@
-/* === VARIABLES GLOBALES === */
+/* =======================================
+   VARIABLES GLOBALES — BRAND CREO DENTAL
+======================================= */
 :root {
   /* Tipografía base */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -10,20 +12,20 @@
   color: #000000;
   background-color: #ffffff;
 
-  /* Suavizado y renderizado */
+  /* Suavizado */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* === COLORES CORPORATIVOS === */
+  /* Colores corporativos */
   --color-gold-main: #caa45b;
   --color-gold-dark: #a8823e;
   --color-black-main: #000000;
   --color-white-main: #ffffff;
   --color-gray-soft: #6b6b6b;
 
-  /* === GRADIENTE DORADO OSCURO === */
+  /* Gradiente dorado */
   --gold-dark-gradient: linear-gradient(
     to right,
     #2f1f08 0%,
@@ -33,29 +35,17 @@
     #2f1f08 100%
   );
 
-  /* === SOMBRAS Y TRANSICIONES === */
+  /* Sombras */
   --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  /* Transiciones */
   --transition-fast: 0.3s ease;
 }
 
-/* === CUERPO GLOBAL === */
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: var(--color-white-main);
-  color: var(--color-black-main);
-  overflow-x: hidden;
-}
 
-/* === CONTENIDO PRINCIPAL === */
-.main-content {
-  min-height: 80vh;
-  padding-top: 4rem;
-  animation: fadePage 0.4s ease;
-}
-
-/* === ANIMACIONES === */
+/* =======================================
+   ANIMACIONES
+======================================= */
 @keyframes fadePage {
   from {
     opacity: 0;

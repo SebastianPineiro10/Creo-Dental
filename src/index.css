@@ -23,14 +23,13 @@
     #2f1f08 100%
   );
 }
-
-body {
+html, body {
+  width: 100%;
   margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #ffffff; /* aseguramos fondo blanco */
-  color: #000000;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
+
 
 .main-content {
   min-height: 80vh;
