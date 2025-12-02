@@ -26,10 +26,8 @@ function VideoCarousel() {
 
       { type: "image", src: "/tratamiento/endodoncia.png" },
       { type: "image", src: "/tratamiento/escaneointraoral.jpg" },
-      { type: "image", src: "/tratamiento/fotoestetica.jpg" },
-
-      { type: "image", src: "/tratamiento/img-1.jpeg" },
-      { type: "image", src: "/tratamiento/img-2.jpeg" },
+      { type: "image", src: "/tratamiento/fotoestetica.jpg"},
+      { type: "image", src: "/tratamiento/diseñodesonrisa.png"}
     ],
     []
   );
