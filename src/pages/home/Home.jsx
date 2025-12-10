@@ -1,10 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import VideoCarousel from "../../components/Carrusel-videos/VideoCarousel.jsx";
-import "./home.css";
 import Reviews from "../../components/reviews/Reviews.jsx";
+import ModalCita from "../../components/Modal-Cita/ModalCita.jsx";
+import "./home.css";
 
 function Home() {
+  const [openModal, setOpenModal] = useState(false);
+
   useEffect(() => {
     const cards = document.querySelectorAll(".mvv-card");
 
@@ -30,11 +33,14 @@ function Home() {
         <title>Creo Dental | Sonrisas que Inspiran Confianza en Ciudad Juárez</title>
         <meta
           name="description"
-          content="Clínica de Rehabilitación Estética Oral en Ciudad Juárez. Tratamientos para niños y adultos en un ambiente cálido, moderno y profesional."
+          content="Clínica de Rehabilitación Estética Oral en Ciudad Juárez. Tratamientos para niños y adultos en un ambiente cálido y profesional."
         />
         <meta property="og:title" content="Creo Dental | Sonrisas que Inspiran Confianza" />
         <meta property="og:description" content="Odontología moderna, ética y humana. Creamos sonrisas con precisión y confianza." />
-        <meta property="og:image" content="https://res.cloudinary.com/dcerhiol0/image/upload/v1759950620/logo-white_peh5mv.png" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dcerhiol0/image/upload/v1759950620/logo-white_peh5mv.png"
+        />
         <meta property="og:url" content="https://creo-dental.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
@@ -55,14 +61,12 @@ function Home() {
             en un ambiente cálido y profesional.
           </p>
 
-          <a
-            href="https://wa.me/526563116130?text=Hola, me interesa agendar una cita en la clínica Creo Dental"
+          <button
             className="btn-gold fade-in delay-2"
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={() => setOpenModal(true)}
           >
             AGENDAR CITA
-          </a>
+          </button>
         </div>
       </section>
 
@@ -75,9 +79,9 @@ function Home() {
           <div className="mvv-divider"></div>
 
           <p>
-            En Creo Dental unimos ciencia, precisión y estética para crear una 
-            experiencia odontológica moderna. Nuestra filosofía se centra en 
-            brindar atención humana, resultados excepcionales y un ambiente 
+            En Creo Dental unimos ciencia, precisión y estética para crear una
+            experiencia odontológica moderna. Nuestra filosofía se centra en
+            brindar atención humana, resultados excepcionales y un ambiente
             donde la confianza y la belleza natural se encuentran.
           </p>
         </div>
@@ -126,9 +130,12 @@ function Home() {
       <div className="hero-carousel-wrapper">
         <Reviews />
       </div>
-    </> 
 
-    
+      {/* ========================
+         MODAL AGENDA TU CITA
+      ========================= */}
+      <ModalCita open={openModal} onClose={() => setOpenModal(false)} />
+    </>
   );
 }
 

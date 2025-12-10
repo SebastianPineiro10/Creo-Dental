@@ -1,0 +1,152 @@
+/* ================================
+   OVERLAY OSCURO + BLUR ELEGANTE
+================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1700;
+  animation: fadeIn 0.35s ease forwards;
+}
+
+/* ================================
+   CONTENEDOR DEL MODAL
+================================ */
+.modal-content {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  width: 92%;
+  max-width: 520px;
+  padding: 2.8rem 2.4rem;
+  border-radius: 14px;
+  position: relative;
+
+  /* Golden border premium */
+  border: 2px solid rgba(218, 165, 32, 0.6);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+
+  animation: scaleIn 0.32s ease forwards;
+}
+
+/* ================================
+   TÍTULO
+================================ */
+.modal-content h2 {
+  text-align: center;
+  font-size: 1.9rem;
+  margin-bottom: 1.4rem;
+  letter-spacing: 1.5px;
+  color: #b8860b;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ================================
+   FORMULARIO
+================================ */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.modal-form label {
+  font-size: 0.92rem;
+  color: #444;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.modal-form input,
+.modal-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
+
+/* Foco con dorado elegante */
+.modal-form input:focus,
+.modal-form textarea:focus {
+  outline: none;
+  border-color: #daa520;
+  box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.25);
+}
+
+.modal-form textarea {
+  resize: none;
+  min-height: 110px;
+}
+
+/* =============== SUBMIT =============== */
+.submit-btn {
+  width: 100%;
+  margin-top: 0.6rem;
+  padding: 0.9rem 0;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* ================================
+   BOTÓN "X" — minimalista premium
+================================ */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.9rem;
+  color: #555;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.25s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.22);
+  color: #b8860b;
+}
+
+/* ================================
+   ANIMACIONES
+================================ */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ================================
+   RESPONSIVE — Mobile limpio
+================================ */
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 2.3rem 1.8rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .modal-close {
+    font-size: 1.7rem;
+  }
+}

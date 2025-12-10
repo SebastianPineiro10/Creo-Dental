@@ -66,7 +66,7 @@ function VideoCarousel() {
       //  swipe left
       setCurrent((prev) => (prev + 1) % slides.length);
     } else if (distance < -50) {
-      // swipe right
+      //                                      swipe right
       setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
     }
   };
