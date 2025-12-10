@@ -6,7 +6,7 @@ export default function ModalCita({ open, onClose }) {
   const [enviado, setEnviado] = useState(false);
 
   const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbxpt_DqzNBteGrlYiugb_3vuHiveA_wo2uqQ77BpOLATjj3HcohXaVIi33w6MnM0PJH/exec";
+    "https://script.google.com/macros/s/AKfycbxlLtB5KH9THhuYe1JUHsE7ylttu1xon4DMY2_44W9MifRvzLedEsLXQoWGPGySBPBSiA/exec";
 
   if (!open) return null;
 
