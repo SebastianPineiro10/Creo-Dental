@@ -1,6 +1,6 @@
 const juarezImages = [
   {
-    src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1765568475/2025-06-04_uer5di.jpg",
+    src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1765571482/2025-06-03_w5pzo8.webp",
     alt: "Recepción Clínica Creo Dental Juárez",
     large: true,
   },
