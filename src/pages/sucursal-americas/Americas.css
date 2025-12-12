@@ -1,493 +1,9 @@
-.americas-section {
-  font-family: "Montserrat", sans-serif;
-  background-color: #fff;
-  color: #1a1a1a;
-  padding: 6rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ---------- HEADER ---------- */
-.americas-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.americas-header h1 {
-  font-weight: 500;
-  font-size: 2.4rem;
-  color: #111;
-  letter-spacing: 0.5px;
-}
-
-.americas-address {
-  margin-top: 0.6rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 1rem;
-  color: #444;
-}
-
-/* ---------- GRID ---------- */
-.americas-grid {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 4rem;
-  flex-wrap: wrap;
-}
-
-/* Lado izquierdo */
-.americas-info {
-  flex: 1;
-  min-width: 320px;
-  display: flex;
-  flex-direction: column;
-  gap: 2.2rem;
-}
-
-/* Bloques */
-.info-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.info-item h3 {
-  font-weight: 500;
-  font-size: 1.05rem;
-  margin-bottom: 0.3rem;
-  color: #b9935a; /* dorado suave */
-}
-
-.info-item p {
-  color: #333;
-  font-size: 0.95rem;
-  margin: 0.15rem 0;
-}
-
-/* ---------- BOTÓN ---------- */
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  width: fit-content;
-  background: #b9935a;
-  color: #fff;
-  font-weight: 500;
-  padding: 0.9rem 1.6rem;
-  border-radius: 100px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 0.95rem;
-}
-
-.btn-whatsapp:hover {
-  background: #a6824c;
-  transform: translateY(-2px);
-}
-
-/* ---------- MAPA ---------- */
-.americas-map {
-  flex: 1;
-  min-width: 350px;
-  height: 400px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.americas-map iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 900px) {
-  .americas-section {
-    padding: 4rem 1.5rem;
-  }
-
-  .americas-grid {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .americas-map {
-    height: 340px;
-  }
-
-  .btn-whatsapp {
-    justify-content: center;
-    margin: 0 auto;
-  }
-}
-
-/* ============================================================
-   1) TABLETS VERTICALES — 768px
-============================================================ */
-@media (max-width: 768px) {
-  .americas-section {
-    padding: 4.5rem 1.8rem;
-  }
-
-  .americas-header h1 {
-    font-size: 2.15rem;
-  }
-
-  .americas-address {
-    font-size: 0.95rem;
-  }
-
-  .americas-grid {
-    gap: 3rem;
-  }
-
-  .americas-map {
-    height: 360px;
-  }
-
-  .americas-info {
-    gap: 2rem;
-  }
-}
-
-
-/* ============================================================
-   2) TELÉFONOS MEDIANOS — 600px
-============================================================ */
-@media (max-width: 600px) {
-  .americas-section {
-    padding: 4rem 1.4rem;
-  }
-
-  .americas-header h1 {
-    font-size: 2rem;
-  }
-
-  .americas-address {
-    font-size: 0.92rem;
-    gap: 6px;
-  }
-
-  .info-item p {
-    font-size: 0.9rem;
-  }
-
-  .info-item {
-    gap: 0.8rem;
-  }
-
-  .btn-whatsapp {
-    font-size: 0.95rem;
-    padding: 0.85rem 1.5rem;
-  }
-
-  .americas-map {
-    height: 330px;
-  }
-}
-
-
-/* ============================================================
-   3) DISPOSITIVOS PEQUEÑOS — 480px
-============================================================ */
-@media (max-width: 480px) {
-  .americas-section {
-    padding: 3.5rem 1.2rem;
-  }
-
-  .americas-header h1 {
-    font-size: 1.85rem;
-    line-height: 1.25;
-  }
-
-  .americas-address {
-    font-size: 0.88rem;
-  }
-
-  .americas-map {
-    height: 300px;
-    border-radius: 16px;
-  }
-
-  .info-item h3 {
-    font-size: 1rem;
-  }
-
-  .info-item p {
-    font-size: 0.87rem;
-  }
-}
-
-
-/* ============================================================
-   4) SMARTPHONES MODERNOS — 414px
-   iPhone 12–15, Galaxy S21–S23
-============================================================ */
-@media (max-width: 414px) {
-  .americas-section {
-    padding: 3.2rem 1.1rem;
-  }
-
-  .americas-header h1 {
-    font-size: 1.75rem;
-  }
-
-  .btn-whatsapp {
-    padding: 0.9rem 1.4rem;
-    font-size: 0.93rem;
-  }
-
-  .americas-map {
-    height: 290px;
-  }
-}
-
-
-/* ============================================================
-   5) EXTRA SMALL — 360px
-   Moto E, Galaxy A01, Xiaomi Go
-============================================================ */
-@media (max-width: 360px) {
-  .americas-section {
-    padding: 3rem 1rem;
-  }
-
-  .americas-header h1 {
-    font-size: 1.6rem;
-  }
-
-  .americas-address {
-    font-size: 0.82rem;
-  }
-
-  .info-item h3 {
-    font-size: 0.95rem;
-  }
-
-  .info-item p {
-    font-size: 0.83rem;
-  }
-
-  .btn-whatsapp {
-    padding: 0.8rem 1.3rem;
-    font-size: 0.88rem;
-  }
-
-  .americas-map {
-    height: 260px;
-    border-radius: 14px;
-  }
-}
-/* ============================================================
-    900px — Ajuste general de tablet horizontal
-============================================================ */
-@media (max-width: 900px) {
-  .americas-section {
-    padding: 4rem 1.5rem;
-  }
-
-  .americas-grid {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .btn-whatsapp {
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  .americas-map {
-    height: 340px;
-  }
-}
-
-
-/* ============================================================
-   768px — Tablets verticales
-============================================================ */
-@media (max-width: 768px) {
-  .americas-section {
-    padding: 4.5rem 1.6rem;
-  }
-
-  .americas-header h1 {
-    font-size: 2.05rem;
-  }
-
-  .americas-address {
-    font-size: 0.94rem;
-  }
-
-  .americas-info {
-    gap: 2rem;
-  }
-
-  .americas-map {
-    height: 330px;
-    border-radius: 18px;
-  }
-
-  .info-item p {
-    font-size: 0.92rem;
-  }
-}
-
-
-/* ============================================================
-   600px — Celulares grandes
-============================================================ */
-@media (max-width: 600px) {
-  .americas-section {
-    padding: 4rem 1.35rem;
-  }
-
-  .americas-header h1 {
-    font-size: 1.9rem;
-    line-height: 1.25;
-  }
-
-  .americas-address {
-    font-size: 0.9rem;
-    gap: 6px;
-  }
-
-  .info-item {
-    gap: 0.8rem;
-  }
-
-  .btn-whatsapp {
-    padding: 0.85rem 1.5rem;
-    font-size: 0.93rem;
-  }
-
-  .americas-map {
-    height: 310px;
-  }
-}
-
-
-/* ============================================================
-    480px — Smartphones estándar
-============================================================ */
-@media (max-width: 480px) {
-  .americas-section {
-    padding: 3.5rem 1.2rem;
-  }
-
-  .americas-header h1 {
-    font-size: 1.75rem;
-  }
-
-  .americas-address {
-    font-size: 0.88rem;
-  }
-
-  .info-item h3 {
-    font-size: 1rem;
-  }
-
-  .info-item p {
-    font-size: 0.85rem;
-  }
-
-  .americas-map {
-    height: 290px;
-    border-radius: 16px;
-  }
-}
-
-
-/* ============================================================
-   414px — iPhone 12–15 / Galaxy S21–S23
-============================================================ */
-@media (max-width: 414px) {
-  .americas-section {
-    padding: 3.2rem 1.1rem;
-  }
-
-  .americas-header h1 {
-    font-size: 1.65rem;
-  }
-
-  .btn-whatsapp {
-    padding: 0.82rem 1.35rem;
-    font-size: 0.9rem;
-  }
-
-  .americas-map {
-    height: 275px;
-  }
-}
-
-
-/* ============================================================
-    360px — Android compactos
-============================================================ */
-@media (max-width: 360px) {
-  .americas-section {
-    padding: 3rem 1rem;
-  }
-
-  .americas-header h1 {
-    font-size: 1.55rem;
-  }
-
-  .americas-address {
-    font-size: 0.82rem;
-  }
-
-  .info-item h3 {
-    font-size: 0.95rem;
-  }
-
-  .info-item p {
-    font-size: 0.82rem;
-  }
-
-  .btn-whatsapp {
-    padding: 0.78rem 1.25rem;
-    font-size: 0.87rem;
-  }
-
-  .americas-map {
-    height: 255px;
-    border-radius: 14px;
-  }
-}
-
-
-/* ============================================================
-    320px — los teléfonos más pequeños
-============================================================ */
-@media (max-width: 320px) {
-  .americas-section {
-    padding: 2.8rem 0.9rem;
-  }
-
-  .americas-header h1 {
-    font-size: 1.45rem;
-  }
-
-  .btn-whatsapp {
-    font-size: 0.85rem;
-    padding: 0.75rem 1.15rem;
-  }
-
-  .americas-map {
-    height: 240px;
-  }
-}
 /* =========================================
-   SECCIÓN BASE PREMIUM
+   SECCIÓN BASE
 ========================================= */
 .americas-section {
   font-family: "Montserrat", sans-serif;
-  background-color: #fff;
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
   color: #1a1a1a;
   padding: 6rem 2rem;
   max-width: 1200px;
@@ -499,7 +15,8 @@
 ========================================= */
 .americas-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 4.5rem;
+  position: relative;
 }
 
 .americas-header h1 {
@@ -507,6 +24,21 @@
   font-size: 2.4rem;
   color: #111;
   letter-spacing: 0.5px;
+}
+
+.americas-header::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #b9935a,
+    transparent
+  );
+  display: block;
+  margin: 1.6rem auto 0;
+  opacity: 0.7;
 }
 
 .americas-address {
@@ -519,43 +51,41 @@
 }
 
 /* =========================================
-   GRID
+   CONTENIDO
 ========================================= */
 .americas-grid {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
   gap: 4rem;
   flex-wrap: wrap;
 }
 
-/* Lado izquierdo */
 .americas-info {
   flex: 1;
   min-width: 320px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+  border-radius: 24px;
+  padding: 2.5rem 2.8rem;
   display: flex;
   flex-direction: column;
   gap: 2.2rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
 }
 
-/* Blocks */
 .info-item {
   display: flex;
-  align-items: flex-start;
   gap: 1rem;
 }
 
 .info-item h3 {
   font-weight: 500;
   font-size: 1.05rem;
-  margin-bottom: 0.3rem;
   color: #b9935a;
 }
 
 .info-item p {
-  color: #333;
   font-size: 0.95rem;
-  margin: 0.15rem 0;
+  color: #333;
 }
 
 /* =========================================
@@ -566,19 +96,19 @@
   align-items: center;
   gap: 10px;
   width: fit-content;
-  background: #b9935a;
+  background: linear-gradient(135deg, #b9935a, #a6824c);
   color: #fff;
-  font-weight: 500;
   padding: 0.9rem 1.6rem;
   border-radius: 100px;
   text-decoration: none;
-  transition: all 0.3s ease;
   font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  transition: all 0.3s ease;
 }
 
 .btn-whatsapp:hover {
-  background: #a6824c;
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 22px rgba(185, 147, 90, 0.35);
 }
 
 /* =========================================
@@ -590,8 +120,7 @@
   height: 400px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .americas-map iframe {
@@ -601,96 +130,66 @@
 }
 
 /* =========================================
+   GALERÍA
+========================================= */
+.americas-gallery-title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin: 6rem 0 2.5rem;
+  letter-spacing: 0.6px;
+}
+
+.americas-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 220px 220px;
+  gap: 16px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-item.large {
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+/* =========================================
    RESPONSIVE
 ========================================= */
 @media (max-width: 900px) {
-  .americas-section {
-    padding: 4rem 1.5rem;
-  }
-
   .americas-grid {
     flex-direction: column;
-    gap: 3rem;
   }
 
-  .americas-map {
-    height: 340px;
+  .americas-gallery {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .btn-whatsapp {
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .americas-header h1 {
-    font-size: 2.1rem;
-  }
-
-  .americas-map {
-    height: 330px;
-  }
-
-  .americas-info {
-    gap: 2rem;
+  .gallery-item.large {
+    grid-column: span 2;
+    grid-row: span 1;
   }
 }
 
 @media (max-width: 600px) {
-  .americas-header h1 {
-    font-size: 1.9rem;
-  }
-
-  .americas-address {
-    font-size: 0.92rem;
-  }
-
-  .americas-map {
-    height: 300px;
-  }
-
-  .btn-whatsapp {
-    font-size: 0.93rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .americas-header h1 {
-    font-size: 1.75rem;
-  }
-
-  .info-item p {
-    font-size: 0.85rem;
-  }
-
-  .americas-map {
-    height: 280px;
-    border-radius: 16px;
-  }
-}
-
-@media (max-width: 360px) {
-  .americas-header h1 {
-    font-size: 1.55rem;
-  }
-
-  .americas-map {
-    height: 250px;
-    border-radius: 14px;
-  }
-
-  .btn-whatsapp {
-    padding: 0.78rem 1.25rem;
-    font-size: 0.87rem;
-  }
-}
-
-@media (max-width: 320px) {
-  .americas-header h1 {
-    font-size: 1.45rem;
-  }
-
-  .americas-map {
-    height: 230px;
+  .americas-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 200px);
   }
 }

@@ -1,10 +1,14 @@
 import "./Juarez.css";
-import {Phone,Clock,MapPin,MessageCircle,} from "lucide-react";
+import { Phone, Clock, MapPin, MessageCircle } from "lucide-react";
+import juarezImages from "./juarez.images.js";
 
 function Juarez() {
   return (
     <section className="juarez-section">
-      {/* Encabezado */}
+
+      {/* ==============================
+          ENCABEZADO
+      ============================== */}
       <header className="juarez-header">
         <h1>Clínica Creo Dental Juárez</h1>
         <p className="juarez-address">
@@ -13,15 +17,18 @@ function Juarez() {
         </p>
       </header>
 
-      {/* Contenido */}
+      {/* ==============================
+          INFO + MAPA
+      ============================== */}
       <div className="juarez-grid">
+
         <div className="juarez-info">
           <div className="info-item">
             <Clock size={18} strokeWidth={1.5} />
             <div>
               <h3>Horarios</h3>
-              <p>Lunes a Sábado — 9 AM – 6 PM</p>
-              <p>Domingo — 10 AM – 4 PM</p>
+              <p>Lunes a Sábado — 9:00 AM – 6:00 PM</p>
+              <p>Domingo — 10:00 AM – 4:00 PM</p>
             </div>
           </div>
 
@@ -49,11 +56,29 @@ function Juarez() {
           <iframe
             title="Mapa Creo Dental Juárez"
             src="https://www.google.com/maps?q=Av.+Ju%C3%A1rez+315,+Ciudad+Ju%C3%A1rez,+Chihuahua&output=embed"
-            allowFullScreen
             loading="lazy"
           ></iframe>
         </div>
       </div>
+
+      {/* ==============================
+          GALERÍA
+      ============================== */}
+      <h2 className="juarez-gallery-title">
+        Nuestras instalaciones
+      </h2>
+
+      <div className="juarez-gallery">
+        {juarezImages.map((image, index) => (
+          <div
+            key={index}
+            className={`gallery-item ${image.large ? "large" : ""}`}
+          >
+            <img src={image.src} alt={image.alt} />
+          </div>
+        ))}
+      </div>
+
     </section>
   );
 }
