@@ -19,7 +19,7 @@
 }
 
 /* =========================================
-   HERO — PREMIUM CLÍNICA (IMAGEN COMPLETA)
+   HERO — PREMIUM CLÍNICA
 ========================================= */
 .aseguranzas-hero-wrapper {
   width: 100%;
@@ -32,24 +32,17 @@
   box-shadow: 0 22px 48px rgba(0, 0, 0, 0.08);
 }
 
-/* Imagen completa sin recorte — FIX MOBILE */
 .aseguranzas-hero-img {
   width: 100%;
-  height: auto;                 /* ← FIX CLAVE */
-  display: block;               /* ← evita colapso */
+  height: auto;
+  display: block;
   object-fit: contain;
   object-position: center;
   background: #f5f5f5;
-  opacity: 0;
-  transition: opacity 1.2s ease;
   border-radius: 15px;
 }
 
-.aseguranzas-hero-img.loaded {
-  opacity: 1;
-}
-
-/* Overlay editorial MUY sutil */
+/* Overlay editorial sutil */
 .aseguranzas-hero-wrapper::after {
   content: "";
   position: absolute;
@@ -63,7 +56,7 @@
 }
 
 /* =========================================
-   CONTENIDO HERO — TEXTO NEGRO PREMIUM
+   CONTENIDO HERO
 ========================================= */
 .aseguranzas-hero-content {
   position: absolute;
@@ -75,7 +68,6 @@
   backdrop-filter: blur(6px);
   border-left: 4px solid #b9935a;
   border-radius: 14px;
-  color: #111;
 }
 
 .aseguranzas-hero-title {
@@ -83,7 +75,6 @@
   font-weight: 500;
   letter-spacing: 0.9px;
   line-height: 1.15;
-  color: #111;
 }
 
 .aseguranzas-hero-sub {
@@ -94,18 +85,17 @@
 }
 
 /* =========================================
-   SUBTÍTULO EDITORIAL
+   SUBTÍTULO
 ========================================= */
 .aseguranzas-subtitle {
   max-width: 820px;
   margin: 0 auto 4.8rem;
   font-size: 1.25rem;
-  color: #111;
   line-height: 1.85;
 }
 
 /* =========================================
-   MARCAS — LIMPIO Y ELEGANTE
+   MARCAS — LUJO SILENCIOSO
 ========================================= */
 .aseguranzas-grid {
   display: grid;
@@ -115,12 +105,10 @@
   justify-items: center;
   margin-bottom: 6.5rem;
 }
-/* =========================================
-   ITEM ASEGURANZA — ESTABILIDAD VISUAL
-========================================= */
+
 .aseguranza-item {
   width: 100%;
-  min-height: 90px;              /* reserva espacio */
+  min-height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,17 +119,11 @@
   max-width: 170px;
   height: 75px;
   object-fit: contain;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-.aseguradora-logo.loaded {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .aseguranzas-mas {
   font-size: 1.1rem;
-  color: #111;
   opacity: 0.65;
 }
 
@@ -158,7 +140,6 @@
 .aseguranzas-box {
   padding: 3rem 2.6rem;
   text-align: left;
-  background: #ffffff;
   border-top: 1px solid #e7e7e7;
 }
 
@@ -166,16 +147,13 @@
   font-size: 1.45rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #111;
 }
 
 .aseguranzas-box li {
   display: flex;
-  align-items: center;
   gap: 14px;
   margin-bottom: 1rem;
   font-size: 1.1rem;
-  color: #111;
 }
 
 .benefit-icon {
@@ -185,7 +163,6 @@
 
 .aseguranzas-text {
   font-size: 1.17rem;
-  color: #111;
   line-height: 1.75;
   margin-bottom: 1.8rem;
 }
@@ -212,27 +189,9 @@
 }
 
 /* =========================================
-   FADE-UP
-========================================= */
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================================
-   RESPONSIVE
+   RESPONSIVE — PREMIUM MOBILE
 ========================================= */
 @media (max-width: 900px) {
-  .aseguranzas-hero-img {
-    max-height: 560px;
-  }
-
   .aseguranzas-hero-content {
     left: 30px;
     bottom: 35px;
@@ -240,31 +199,43 @@
 }
 
 @media (max-width: 768px) {
+  .aseguranzas-hero-content {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: -60px auto 0;
+    max-width: 90%;
+    text-align: center;
+  }
+
   .aseguranzas-hero-title {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 
   .aseguranzas-double-box {
     grid-template-columns: 1fr;
   }
+
+  .aseguranzas-grid {
+    gap: 3rem 2rem;
+  }
 }
 
-@media (max-width: 620px) {
-  .aseguranzas-hero-img {
-    max-height: 480px;
-  }
-
-  .aseguranzas-hero-content {
-    left: 22px;
-    bottom: 28px;
-    padding: 20px;
+@media (max-width: 480px) {
+  .aseguranzas-section {
+    padding: 5rem 0 6rem;
   }
 
   .aseguranzas-hero-title {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
-  .aseguranzas-hero-sub {
-    font-size: 1.05rem;
+  .aseguranzas-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .aseguradora-logo {
+    max-width: 140px;
+    height: 65px;
   }
 }
