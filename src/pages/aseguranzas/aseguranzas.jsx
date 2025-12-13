@@ -5,19 +5,25 @@ import { aseguranzasData } from "../aseguranzas/aseguranzasData.js";
 
 function Aseguranzas() {
 
-  // Animaciones fade-up
+  // Animaciones fade-up (con cleanup profesional)
   useEffect(() => {
     const elements = document.querySelectorAll(".fade-up");
+
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add("visible");
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // 🔑 performance + clean
+          }
         });
       },
       { threshold: 0.2 }
     );
 
     elements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect(); // 🔑 cleanup React
   }, []);
 
   return (
@@ -48,7 +54,7 @@ function Aseguranzas() {
           respaldo y una atención verdaderamente profesional.
         </p>
 
-        {/* ========== GRID DESKTOP PREMIUM ========== */}
+        {/* ========== GRID ASEGURANZAS ========== */}
         <div className="aseguranzas-grid fade-up">
           {aseguranzasData.map((seguro, i) => (
             <div key={i} className="aseguranza-item">
@@ -57,6 +63,7 @@ function Aseguranzas() {
                   className="aseguradora-logo"
                   src={seguro.logo}
                   alt={seguro.nombre}
+                  onLoad={(e) => e.target.classList.add("loaded")}
                 />
               ) : (
                 <p className="aseguranzas-mas">{seguro.nombre}</p>
@@ -74,7 +81,6 @@ function Aseguranzas() {
                 <CheckCircle2 className="benefit-icon" />
                 Llámenos para confirmar si su aseguranza está cubierta.
               </li>
-
               <li>
                 <CheckCircle2 className="benefit-icon" />
                 Consulte con su proveedor los beneficios y restricciones de su plan.
