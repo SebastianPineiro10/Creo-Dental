@@ -26,68 +26,79 @@ function Footer() {
     <footer ref={footerRef} className="footer fade-in-footer">
       <div className="footer-container">
 
-        {/* ---------- LOGO Y LEMA ---------- */}
+        {/* LOGO */}
         <div className="footer-logo">
           <h2 className="brand-title">Creo Dental</h2>
-          <p className="brand-subtitle">Tu sonrisa, nuestra prioridad.</p>
+          <p className="brand-subtitle">
+            Clínica dental especializada en rehabilitación estética y atención personalizada.
+          </p>
         </div>
 
-        {/* ---------- NAVEGACIÓN ---------- */}
+        {/* NAVEGACIÓN */}
         <div className="footer-links">
           <h3 className="footer-heading">Navegación</h3>
           <a href="/">Inicio</a>
           <a href="/services">Servicios</a>
+          <a href="/promociones">Promociones</a>
           <a href="/contact">Contacto</a>
         </div>
 
-        {/* ---------- INFORMACIÓN Y REDES ---------- */}
+        {/* CONTACTO */}
         <div className="footer-info">
           <h3 className="footer-heading">Contacto</h3>
-          <p>Av. Juárez 315</p>
+          <p>Av. Juárez 315, Ciudad Juárez</p>
           <p>Tel: 656 311 6130 / 915 875 2441</p>
           <p>Email: creodental122@gmail.com</p>
 
-          {/* Redes sociales */}
           <div className="footer-socials">
             <a
               href="https://www.facebook.com/creodentalclinica"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Facebook"
             >
               <Facebook size={22} strokeWidth={1.2} />
             </a>
+
             <a
               href="https://www.instagram.com/clinicacreodental/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram"
             >
               <Instagram size={22} strokeWidth={1.2} />
             </a>
+
             <a
-              href="https://wa.me/526563116130"
+              href="https://wa.me/526563116130?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20en%20Creo%20Dental"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="WhatsApp"
             >
               <MessageCircle size={22} strokeWidth={1.2} />
             </a>
           </div>
         </div>
+
+        {/* MAPA */}
+        <div className="footer-map">
+          <h3 className="footer-heading">Ubicación</h3>
+          <iframe
+            title="Mapa Creo Dental"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.048885258822!2d-106.4853582!3d31.741866599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e759fbe8d183c5%3A0x61ff40393587918b!2sCREO%20Dental!5e0!3m2!1ses!2smx!4v1765671580622!5m2!1ses!2smx"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
       </div>
 
-      {/* ---------- DIVISOR ---------- */}
       <div className="divider"></div>
 
-      {/* ---------- COPYRIGHT ---------- */}
+      {/* LEGAL */}
       <div className="footer-bottom">
-        <p>
-          © {new Date().getFullYear()} Creo Dental — Todos los derechos reservados
-        </p>
+        <p>© {new Date().getFullYear()} Creo Dental · Todos los derechos reservados</p>
       </div>
     </footer>
   );
 }
 
 export default Footer;
+
