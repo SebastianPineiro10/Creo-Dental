@@ -56,11 +56,10 @@ function Aseguranzas() {
             <h2>Antes de su cita</h2>
             <ul>
               <li>
-                <CheckCircle2 className="benefit-icon" />
+                
                 Llámenos para confirmar si su aseguranza está cubierta.
               </li>
               <li>
-                <CheckCircle2 className="benefit-icon" />
                 Consulte con su proveedor los beneficios y restricciones de su plan.
               </li>
             </ul>
