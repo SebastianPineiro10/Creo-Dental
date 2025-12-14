@@ -9,10 +9,6 @@ const juarezImages = [
     alt: "Consultorio dental Juárez",
   },
   {
-    src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1765568556/unnamed_1_k6cksc.webp",
-    alt: "Área de espera Juárez",
-  },
-  {
     src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1765568476/unnamed_xc5a48.webp",
     alt: "Instalaciones modernas Juárez",
   },

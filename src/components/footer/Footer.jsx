@@ -39,7 +39,6 @@ function Footer() {
           <h3 className="footer-heading">Navegación</h3>
           <a href="/">Inicio</a>
           <a href="/services">Servicios</a>
-          <a href="/promociones">Promociones</a>
           <a href="/contact">Contacto</a>
         </div>
 

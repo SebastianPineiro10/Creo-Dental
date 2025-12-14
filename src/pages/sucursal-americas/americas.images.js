@@ -1,11 +1,11 @@
 const americasImages = [
   {
-    src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1765567387/sucursal-americas_o0ew1t.jpg",
+    src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1765739235/WhatsApp_Image_2025-12-13_at_17.01.42_hxvvgo.jpg",
     alt: "Fachada Clínica Creo Dental Américas",
     large: true,
   },
   {
-    src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1765567387/sucursale-americas-2_z0jjrp.jpg",
+    src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1765739235/WhatsApp_Image_2025-12-13_at_17.01.41_rtuznw.jpg",
     alt: "Recepción Creo Dental Américas",
   },
   {
