@@ -12,7 +12,7 @@ export default function ModalCita({ open, onClose }) {
 
   if (!open) return null;
 
-  // VALIDACIONES BÁSICAS PROFESIONALES
+  // VALIDACIONES BÁSICAS PROFESIONALES 
   const validators = {
     nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s.'-]{2,60}$/,
     telefono: /^[0-9\s+\-()]{8,20}$/,
