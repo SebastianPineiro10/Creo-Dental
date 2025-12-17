@@ -3,7 +3,6 @@ import "./modalcita.css";
 
 export default function ModalCita({ open, onClose }) {
   const [loading, setLoading] = useState(false);
-  const [enviado, setEnviado] = useState(false);
   const [errors, setErrors] = useState({});
 
   // URL DE TU APPS SCRIPT
@@ -12,16 +11,15 @@ export default function ModalCita({ open, onClose }) {
 
   if (!open) return null;
 
-  // VALIDACIONES BÁSICAS PROFESIONALES 
+  // VALIDACIONES BÁSICAS PROFESIONALES
   const validators = {
     nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s.'-]{2,60}$/,
     telefono: /^[0-9\s+\-()]{8,20}$/,
-    motivo: /^.{5,300}$/ // mínimo 5 caracteres
+    motivo: /^.{5,300}$/
   };
 
   const handleInput = (e) => {
     const { name } = e.target;
-
     if (errors[name]) {
       const updated = { ...errors };
       delete updated[name];
@@ -62,7 +60,7 @@ export default function ModalCita({ open, onClose }) {
     const finalData = {
       nombre: data.nombre,
       telefono: data.telefono,
-      motivo: cleanMotivo
+      motivo: cleanMotivo,
     };
 
     // ENVÍO A GOOGLE SHEETS
@@ -71,18 +69,14 @@ export default function ModalCita({ open, onClose }) {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(finalData).toString(),
     })
-      .then((res) => res.text())
       .then(() => {
         setLoading(false);
-        setEnviado(true);
         e.target.reset();
-
-        setTimeout(() => {
-          setEnviado(false);
-          onClose();
-        }, 1900);
+        onClose(); // ✅ se cierra el modal → UX limpia
       })
-      .catch(() => setLoading(false));
+      .catch(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -105,7 +99,7 @@ export default function ModalCita({ open, onClose }) {
             <p className="error-msg">Ingresa un nombre válido.</p>
           )}
 
-          {/* TELEFONO */}
+          {/* TELÉFONO */}
           <label>Teléfono</label>
           <input
             type="text"
@@ -142,11 +136,6 @@ export default function ModalCita({ open, onClose }) {
           >
             {loading ? "Enviando..." : "Enviar solicitud"}
           </button>
-
-          {/* MENSAJE DE ÉXITO */}
-          {enviado && (
-            <p className="success-msg">✔ Mensaje enviado correctamente</p>
-          )}
         </form>
 
         <button className="modal-close" onClick={onClose}>
