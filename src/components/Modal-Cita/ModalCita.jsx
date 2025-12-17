@@ -8,7 +8,7 @@ export default function ModalCita({ open, onClose }) {
 
   // URL DE TU APPS SCRIPT
   const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbxXODSAo1XZUTb9FUsyAnZr9WWOmFQc1xv6kKo9V9nR3UKmo4N5-ECk51Aj5qhcuc5t/exec";
+    "https://script.google.com/macros/s/AKfycbzS532ZVv-17-2eH7PgmfSg_o8zB5U9_CgtnQ9fKTtm2rCnSbLFmC_wNgh9Fwev6pxj/exec";
 
   if (!open) return null;
 
