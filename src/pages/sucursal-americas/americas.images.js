@@ -1,4 +1,4 @@
-const americasImages = [
+/*const americasImages = [
   {
     src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1765739235/WhatsApp_Image_2025-12-13_at_17.01.42_hxvvgo.jpg",
     alt: "Fachada Clínica Creo Dental Américas",
@@ -14,4 +14,4 @@ const americasImages = [
   }
 ];
 
-export default americasImages;
+export default americasImages; */

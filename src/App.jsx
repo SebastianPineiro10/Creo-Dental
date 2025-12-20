@@ -8,7 +8,7 @@ import WhatsappFloat from "./components/WhatsappFloat/WhatsappFloat.jsx";
 
 // Sucursales
 import SucursalJuarez from "./pages/sucursal-juarez/Juarez";
-import SucursalAmericas from "./pages/sucursal-americas/Americas";
+//import SucursalAmericas from "./pages/sucursal-americas/Americas";
 
 // Especialistas
 import Especialistas from "./pages/especialistas/Especialistas.jsx";
@@ -81,8 +81,8 @@ function App() {
           }
         />
 
-        {/* SUCURSAL AMERICAS */}
-        <Route
+       {/* Americas */}
+        {/* <Route
           path="/sucursal/americas"
           element={
             <MainLayout>
@@ -93,7 +93,7 @@ function App() {
               />
             </MainLayout>
           }
-        />
+        /> */}
 
         {/* ESPECIALISTAS */}
         <Route

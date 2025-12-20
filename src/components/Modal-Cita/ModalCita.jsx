@@ -72,7 +72,7 @@ export default function ModalCita({ open, onClose }) {
       .then(() => {
         setLoading(false);
         e.target.reset();
-        onClose(); // ✅ se cierra el modal → UX limpia
+        onClose(); //  se cierra el modal → UX limpia
       })
       .catch(() => {
         setLoading(false);

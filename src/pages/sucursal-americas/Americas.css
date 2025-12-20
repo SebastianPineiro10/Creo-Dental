@@ -1,6 +1,6 @@
-/* =========================================
+/* 
    SECCIÓN BASE
-========================================= */
+
 .americas-section {
   font-family: "Montserrat", sans-serif;
   background: linear-gradient(to bottom, #ffffff, #fafafa);
@@ -10,9 +10,7 @@
   margin: 0 auto;
 }
 
-/* =========================================
-   HEADER
-========================================= */
+
 .americas-header {
   text-align: center;
   margin-bottom: 4.5rem;
@@ -50,9 +48,7 @@
   color: #444;
 }
 
-/* =========================================
-   CONTENIDO
-========================================= */
+
 .americas-grid {
   display: flex;
   gap: 4rem;
@@ -88,9 +84,7 @@
   color: #333;
 }
 
-/* =========================================
-   BOTÓN WHATSAPP
-========================================= */
+
 .btn-whatsapp {
   display: inline-flex;
   align-items: center;
@@ -111,9 +105,7 @@
   box-shadow: 0 10px 22px rgba(185, 147, 90, 0.35);
 }
 
-/* =========================================
-   MAPA
-========================================= */
+
 .americas-map {
   flex: 1;
   min-width: 350px;
@@ -129,9 +121,7 @@
   border: none;
 }
 
-/* =========================================
-   GALERÍA
-========================================= */
+
 .americas-gallery-title {
   text-align: center;
   font-weight: 400;
@@ -169,9 +159,7 @@
   filter: brightness(1.05);
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+
 @media (max-width: 900px) {
   .americas-grid {
     flex-direction: column;
@@ -192,4 +180,4 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 200px);
   }
-}
+} /*

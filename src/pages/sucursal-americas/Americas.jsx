@@ -1,4 +1,4 @@
-import "./Americas.css";
+/* import "./Americas.css";
 import { Phone, Clock, MapPin, MessageCircle } from "lucide-react";
 import americasImages from "./americas.images.js";
 
@@ -8,8 +8,8 @@ function Americas() {
 
       {/* ==============================
           ENCABEZADO
-      ============================== */}
-      <header className="americas-header">
+      ============================== */
+      /*<header className="americas-header">
         <h1>Clínica Creo Dental Américas</h1>
         <p className="americas-address">
           <MapPin size={18} strokeWidth={1.5} />
@@ -19,8 +19,8 @@ function Americas() {
 
       {/* ==============================
           INFORMACIÓN + MAPA
-      ============================== */}
-      <div className="americas-grid">
+      ============================== */
+      /*<div className="americas-grid">
 
         <div className="americas-info">
           <div className="info-item">
@@ -62,8 +62,8 @@ function Americas() {
 
       {/* ==============================
           GALERÍA — AL FINAL
-      ============================== */}
-      <h2 className="americas-gallery-title">
+      ============================== */
+      /*<h2 className="americas-gallery-title">
         Nuestras instalaciones
       </h2>
 
@@ -82,4 +82,4 @@ function Americas() {
   );
 }
 
-export default Americas;
+export default Americas; */
