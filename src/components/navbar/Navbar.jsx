@@ -51,7 +51,7 @@ function Navbar() {
             {isDropdownOpen && (
               <div className="dropdown-menu">
                 <Link to="/sucursal/juarez" className="dropdown-item">Clínica Juárez</Link>
-                <Link to="/sucursal/americas" className="dropdown-item">Clínica Américas</Link>
+                {/*<Link to="/sucursal/americas" className="dropdown-item">Clínica Américas</Link>*/}
               </div>
             )}
           </li>
