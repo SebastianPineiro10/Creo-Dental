@@ -4,30 +4,32 @@ import "./VideoCarousel.css";
 function VideoCarousel() {
   const slides = useMemo(
     () => [
-      { type: "image", src: "/tratamiento/alineadores.png" },
-      { type: "image", src: "/tratamiento/alineadoress.png" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691245/alineadores_tt3uur.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691246/allon4_kpr1mv.jpg" },
 
-      { type: "image", src: "/tratamiento/allon4.jpg" },
-      { type: "image", src: "/tratamiento/allonx.jpg" },
-      { type: "image", src: "/tratamiento/blanqueamiento.png" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691246/alineadoress_rpmdmt.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691248/allonx_lmlh5r.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691247/allonx_1_xody5a.jpg" },
 
-      { type: "image", src: "/tratamiento/carillas0.png" },
-      { type: "image", src: "/tratamiento/carillas1.png" },
-      { type: "image", src: "/tratamiento/carillas2.png" },
-      { type: "image", src: "/tratamiento/carillas3.png" },
-      { type: "image", src: "/tratamiento/carillas4.png" },
-      { type: "image", src: "/tratamiento/carillas5.png" },
-      { type: "image", src: "/tratamiento/carillas6.png" },
-      { type: "image", src: "/tratamiento/carillas7.png" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691249/blanqueamiento_fjqgek.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691250/carillas_bsrmgb.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691251/carillas0_t0blpn.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691251/carillas1_eu272q.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691253/carillas2_dduocs.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691254/carillas3_vtxeia.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691255/carillas4_j0pwl7.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691256/carillas5_ah9izt.jpg" },
 
-      { type: "image", src: "/tratamiento/cirugiaguiada.png" },
-      { type: "image", src: "/tratamiento/diseñodesonrisa.jpg" },
-      { type: "image", src: "/tratamiento/diseñodesonrisa.png" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691257/carillas6_utzovc.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691258/carillas7_ds5eb0.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691259/cirugiaguiada_xtdqdo.jpg" },
 
-      { type: "image", src: "/tratamiento/endodoncia.png" },
-      { type: "image", src: "/tratamiento/escaneointraoral.jpg" },
-      { type: "image", src: "/tratamiento/fotoestetica.jpg"},
-      { type: "image", src: "/tratamiento/diseñodesonrisa.png"}
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691260/disen%CC%83odesonrisa_1_mlq6g8.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691262/disen%CC%83odesonrisa_zyht1i.jpg" },
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691263/endodoncia_fwr6wp.jpg"},
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691264/escaneointraoral_y7fzx0.jpg"},
+      { type: "image", src: "https://res.cloudinary.com/dcerhiol0/image/upload/v1766691265/fotoestetica_rdhpyb.jpg"
+      }
     ],
     []
   );
