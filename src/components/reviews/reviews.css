@@ -41,13 +41,7 @@
   color: #c5a56a;
   font-size: 0.92rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.reviews-tabs button:hover {
-  background: #c5a56a;
-  color: #fff;
+  cursor: default;
 }
 
 .reviews-tabs .active {
@@ -56,7 +50,7 @@
 }
 
 /* ================================
-   GRID — PERFECTAMENTE ELEGANTE
+   GRID
 ================================ */
 .reviews-grid {
   display: grid;
@@ -64,11 +58,11 @@
   gap: 1.7rem;
   max-width: 1250px;
   margin: 0 auto 2.5rem;
-  align-items: stretch; /* IMPORTANTE para uniformidad */
+  align-items: stretch;
 }
 
 /* ================================
-   TARJETA AJUSTADA (MISMO TAMAÑO)
+   TARJETA
 ================================ */
 .review-card {
   background: #fff;
@@ -76,154 +70,108 @@
   padding: 1.5rem;
   border: 1px solid rgba(197,165,106,0.18);
   box-shadow: 0 4px 14px rgba(0,0,0,0.07);
-  transition: all 0.3s ease;
-
+  transition: .3s ease;
   display: flex;
   flex-direction: column;
-
-  min-height: 240px; /* equilibrado */
+  min-height: 240px;
 }
 
-/* Hover */
 .review-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-/* ================================
-   ICONO
-================================ */
+/* ICONO */
 .review-google-icon img {
   width: 23px;
-  opacity: 0.9;
-  margin-bottom: 0.6rem;
+  opacity: .9;
+  margin-bottom: .6rem;
 }
 
-/* ================================
-   HEADER (NOMBRE Y ESTRELLAS)
-================================ */
+/* HEADER */
 .review-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.3rem;
+  margin-bottom: .3rem;
 }
 
 .review-header h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: #222;
 }
 
-.review-stars {
-  color: #f4b400;
-  font-size: 1rem;
-}
+.review-stars { color:#f4b400; }
 
-/* ================================
-   FECHA
-================================ */
+/* FECHA */
 .review-date {
-  margin-bottom: 0.6rem;
-  font-size: 0.82rem;
-  color: #8c8c8c;
+  font-size: .82rem;
+  color:#8c8c8c;
+  margin-bottom:.6rem;
 }
 
-/* ================================
-   TEXTO — MEJOR BLOQUE
-================================ */
+/* TEXTO */
 .review-text {
-  font-size: 0.9rem;
-  line-height: 1.55;
-  color: #333;
-  margin-top: auto;
+  margin-top:auto;
+  line-height:1.55;
+  color:#333;
 }
 
 /* ================================
-   PAGINACIÓN
+   PAGINACIÓN (desktop + mobile)
 ================================ */
 .reviews-pagination {
-  text-align: center;
-  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .35rem;
 }
 
+.page-arrow,
 .page-btn {
-  background: transparent;
   border: 2px solid #c5a56a;
-  padding: 0.45rem 0.9rem;
-  margin: 0 0.3rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  background: transparent;
   color: #c5a56a;
+  padding: .55rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.25s ease;
+  transition: .25s ease;
 }
 
+.page-arrow:hover,
 .page-btn:hover {
-  background: #c5a56a;
-  color: #fff;
+  background:#c5a56a;
+  color:#fff;
 }
 
 .page-btn.active {
-  background: #c5a56a;
-  color: #fff;
-  font-weight: 700;
+  background:#c5a56a;
+  color:#fff;
 }
 
 /* ================================
-   ANIMACIONES
-================================ */
-.fade-transition {
-  animation: fadeIn 0.4s ease;
-}
-
-.fade-ojiva {
-  animation: riseFade 0.5s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.96); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-@keyframes riseFade {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-
-/* ================================
-   RESPONSIVE FIX
+   RESPONSIVE
 ================================ */
 @media (max-width: 500px) {
-  .reviews-title {
-    font-size: 2rem;
-  }
+  .reviews-grid { grid-template-columns: 1fr; }
 
-  .reviews-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .review-card {
-    min-height: 220px;
+  .page-btn,
+  .page-arrow {
+    padding: .7rem 1.1rem;
+    font-size: 1rem;
   }
 }
+
 /* ================================
-   ANIMACIÓN USADA EN JSX: fade-slide
+   ANIMACIÓN
 ================================ */
 .fade-slide {
-  animation: fadeSlide 0.5s ease forwards;
-  opacity: 0;
+  animation: fadeSlide .5s ease forwards;
+  opacity:0;
 }
 
 @keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity:0; transform:translateY(12px); }
+  to   { opacity:1; transform:translateY(0); }
 }
-

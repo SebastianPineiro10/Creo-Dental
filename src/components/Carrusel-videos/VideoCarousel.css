@@ -2,200 +2,135 @@
    SECCIÓN PRINCIPAL
 ====================================== */
 .video-carousel-section {
-  position: relative;
   width: 100vw;
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #fffdf8, #f9f7f3);
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  background: linear-gradient(to bottom,#fffdf8,#f9f7f3);
   padding: 3rem 1rem 4rem;
+  text-align: center;
+  color: #333;
 }
 
-/* ======================================
-   TÍTULO
-====================================== */
 .carousel-title {
   font-size: 2.3rem;
-  color: var(--color-gold-main, #caa45b);
-  font-family: "Playfair Display", serif;
+  color: #caa45b;
   margin-bottom: 2.8rem;
+  font-family: "Playfair Display", serif;
   font-weight: 600;
-  letter-spacing: 0.3px;
 }
 
 /* ======================================
-   CONTENEDOR DEL CARRUSEL
+   CONTENEDOR CON FLECHAS EXTERNAS
 ====================================== */
-.carousel-wrapper {
-  max-width: 960px;
-  width: 100%;
+.carousel-outside-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 12px;
 }
 
-/* Caja principal */
+/* Caja del carrusel */
 .hero-carousel {
+  position: relative;
   overflow: hidden;
   border-radius: 22px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
-  background: #fff;
-  width: 100%;
+  background: #000;
+  flex: 1;
+  box-shadow: 0 8px 28px rgba(0,0,0,.07);
 }
 
 /* Track */
 .carousel-track {
   display: flex;
-  transition: transform 0.9s cubic-bezier(0.75, 0.1, 0.25, 1);
+  transition: transform .9s cubic-bezier(.75,.1,.25,1);
 }
 
-/* Slides */
+/* ======================================
+   SLIDES
+====================================== */
 .carousel-item {
   min-width: 100%;
-  height: 520px;
+  height: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* ======================================
-   IMÁGENES Y VIDEOS
+   IMÁGENES — FULL WIDTH SIN DEFORMARSE
 ====================================== */
 .carousel-content img,
 .carousel-content video {
   width: 100%;
   height: 100%;
+
+  /* 🔹 Se adapta al ancho sin deformarse */
   object-fit: cover;
+
+  /* 🔹 Mantiene encuadre centrado */
+  object-position: center;
+
   border-radius: 22px;
-  background: #f3f3f3;
-  transition: filter 0.35s ease;
+  transition: filter .35s ease;
 }
 
 .carousel-content img:hover,
 .carousel-content video:hover {
-  filter: brightness(1.05);
-}
-
-.carousel-video {
-  display: block;
-  object-fit: cover;
-  min-height: 100%;
+  filter: brightness(1.06);
 }
 
 /* ======================================
-   DOTS / NAVEGACIÓN
+   FLECHAS EXTERNAS
 ====================================== */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* ESPACIADO PREMIUM entre carousel y dots */
-  margin-top: 2.4rem;
-  gap: 20px;
-}
-
-.dot {
-  width: 26px;
-  height: 26px;
+.outside-arrow {
+  background: #111;
+  border: 2px solid #caa45b;
+  color: #fff;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: #bbbbbb;
+  font-size: 2rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: .25s ease;
 }
 
-.dot:hover {
-  background: var(--color-gold-main, #caa45b);
-  transform: scale(1.25);
+.outside-arrow:hover {
+  background: #caa45b;
+  color: #111;
 }
 
-.dot.active {
-  background: var(--color-gold-main, #caa45b);
-  transform: scale(1.65);
-  border: 2px solid #fff;
-  box-shadow: 0 0 15px rgba(202, 164, 91, 0.8);
+.outside-arrow.left { margin-right: 4px; }
+.outside-arrow.right { margin-left: 4px; }
+
+/* ======================================
+   TABLET
+====================================== */
+@media (max-width: 768px){
+  .carousel-item { height: 320px; }
+
+  .outside-arrow {
+    width: 46px;
+    height: 46px;
+    font-size: 1.8rem;
+  }
 }
 
 /* ======================================
-   RESPONSIVE HEIGHTS (bolitas SIEMPRE GRANDES)
+   MOBILE (mejor proporción visual)
 ====================================== */
-@media (max-width: 992px) {
-  .carousel-item { height: 420px; }
-  .carousel-dots { margin-top: 2.2rem; }
-}
+@media (max-width: 480px){
+  .carousel-item { height: 300px; }
 
-@media (max-width: 768px) {
-  .carousel-item { height: 350px; }
-  .carousel-dots { margin-top: 2rem; }
-}
-
-@media (max-width: 600px) {
-  .carousel-item {
-    height: 300px;
-  }
-
-  .carousel-dots {
-    margin-top: 1.8rem;
-
-    /* 🔹 FIX: que las bolitas NO generen scroll horizontal */
-    flex-wrap: wrap;
-    gap: 12px 14px;
-    padding: 0 1.2rem;
-    max-width: 100%;
-  }
-
-  .dot {
-    width: 18px;
-    height: 18px;
-  }
-
-  .dot.active {
-    transform: scale(1.35);
-    box-shadow: 0 0 10px rgba(202, 164, 91, 0.7);
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-item { height: 260px; }
-  .carousel-dots { gap: 12px 12px; margin-top: 1.6rem; }
-}
-
-@media (max-width: 414px) {
-  .carousel-item { height: 240px; }
-  .carousel-dots { margin-top: 1.5rem; }
-}
-
-@media (max-width: 360px) {
-  .carousel-item { height: 220px; }
-  .carousel-dots { margin-top: 1.4rem; }
-}
-
-/* ======================================
-   FIX GLOBAL MOBILE — evita corte y scroll horizontal
-====================================== */
-@media (max-width: 768px) {
-  .hero-carousel {
-    overflow: hidden;
-  }
-
-  .carousel-track {
-    width: 100%;
-  }
-
-  .carousel-item {
-    width: 100%;
-    max-width: 100%;
+  .outside-arrow {
+    width: 44px;
+    height: 44px;
   }
 
   .carousel-content img,
   .carousel-content video {
     border-radius: 16px;
   }
+}
 
-  .video-carousel-section {
-    padding: 2rem 0.6rem;
-  }
+@media (max-width: 360px){
+  .carousel-item { height: 260px; }
 }

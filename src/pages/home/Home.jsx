@@ -53,22 +53,67 @@ function Home() {
 
         <div className="hero-container">
           <h1 className="fade-in arch-title">
-            SONRISAS QUE <br /> INSPIRAN CONFIANZA
+            SOLUCIONES AVANZADAS PARA CASOS COMPLETOS
           </h1>
 
           <p className="fade-in delay-1 arch-subtitle">
-            Clínica de Rehabilitación Estética Oral. Tratamientos para niños y adultos
-            en un ambiente cálido y profesional.
+            Atención integral con tecnología de vanguardia , escaneo digital y laboratorio propio. 
+            Rehabilitaciones completas con precisión estética natural y tiempos optimizados 
           </p>
 
           <button
             className="btn-gold fade-in delay-2"
             onClick={() => setOpenModal(true)}
           >
-            AGENDAR CITA
+            COMIENZA TU TRATAMIENTO
           </button>
         </div>
       </section>
+
+          {/* ========================
+        CAMINO HACIA TU NUEVA SONRISA
+    ========================= */}
+    <section className="steps-section">
+      <h2 className="steps-title">UN CAMINO CLARO HACIA TU NUEVA SONRISA</h2>
+      <div className="steps-divider"></div>
+
+      <div className="steps-grid">
+
+        <div className="step-card">
+          <h3>PASO 1 — Agendar valoración</h3>
+          <p>
+            Visita inicial para conocer tus necesidades. Conversamos sobre tus objetivos
+            y valoramos tu estado bucal para determinar el tratamiento que mejor se adapta a tu caso.
+          </p>
+        </div>
+
+        <div className="step-card">
+          <h3>PASO 2 — Diagnóstico digital y planificación</h3>
+          <p>
+            Planificación avanzada con tecnología 3D. Integramos diagnóstico clínico y datos digitales
+            para diseñar soluciones confiables que optimizan tiempos y mejoran la experiencia del paciente.
+          </p>
+        </div>
+
+        <div className="step-card">
+          <h3>PASO 3 — Inicio de tratamiento</h3>
+          <p>
+            Procedimientos guiados digitalmente para mejores resultados. Ejecutamos tu plan personalizado
+            utilizando guías digitales y técnicas avanzadas para lograr función, estabilidad y una estética natural.
+          </p>
+        </div>
+
+        <div className="step-card">
+          <h3>PASO 4 — Acompañamiento continuo</h3>
+          <p>
+            Evaluamos tu progreso y realizamos los ajustes necesarios para asegurar que la rehabilitación evolucione
+            correctamente y se mantenga estable en el tiempo.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
 
       {/* ========================
           FILOSOFÍA

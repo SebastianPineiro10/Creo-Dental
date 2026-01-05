@@ -1,16 +1,14 @@
 // src/components/reviews/Reviews.jsx
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./reviews.css";
 
 import { reviewsJuarez } from "./reviewsJuarez";
-import { reviewsAmericas } from "./reviewsAmerica";
 
 function Reviews() {
-  const [branch, setBranch] = useState("juarez");
   const [page, setPage] = useState(1);
   const [fadeKey, setFadeKey] = useState(0);
 
-  const reviews = branch === "juarez" ? reviewsJuarez : reviewsAmericas;
+  const reviews = reviewsJuarez;
 
   const reviewsPerPage = 6;
   const totalPages = Math.ceil(reviews.length / reviewsPerPage);
@@ -18,48 +16,67 @@ function Reviews() {
   const startIndex = (page - 1) * reviewsPerPage;
   const currentReviews = reviews.slice(startIndex, startIndex + reviewsPerPage);
 
-  const changeBranch = (newBranch) => {
-    if (newBranch === branch) return;
-    setBranch(newBranch);
-    setPage(1);
-    setFadeKey((prev) => prev + 1);
-  };
-
   const changePage = (newPage) => {
-    if (newPage === page) return;
+    if (newPage === page || newPage < 1 || newPage > totalPages) return;
     setPage(newPage);
     setFadeKey((prev) => prev + 1);
   };
 
+  /* ======================
+     PAGINACIÓN (máx 5)
+  ======================= */
+  const MAX_VISIBLE = 5;
+
+  const getVisiblePages = () => {
+    let start = Math.max(1, page - Math.floor(MAX_VISIBLE / 2));
+    let end = start + MAX_VISIBLE - 1;
+
+    if (end > totalPages) {
+      end = totalPages;
+      start = Math.max(1, end - MAX_VISIBLE + 1);
+    }
+
+    return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+  };
+
+  const nextPage = () => changePage(page + 1);
+  const prevPage = () => changePage(page - 1);
+
+  /* ======================
+     TOUCH SWIPE
+  ======================= */
+  const touchX = useRef(0);
+
+  const handleTouchStart = (e) => {
+    touchX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    const delta = e.changedTouches[0].clientX - touchX.current;
+    if (delta > 40) prevPage();
+    if (delta < -40) nextPage();
+  };
+
   return (
     <section className="reviews-section">
-
       {/* TÍTULO */}
       <div className="reviews-header">
         <h2 className="reviews-title">Reseñas de Google</h2>
 
         <div className="reviews-tabs">
-          <button
-            className={branch === "juarez" ? "active" : ""}
-            onClick={() => changeBranch("juarez")}
-          >
-            Creo Dental Juárez
-          </button>
-
-          <button
-            className={branch === "americas" ? "active" : ""}
-            onClick={() => changeBranch("americas")}
-          >
-            Creo Dental Américas
-          </button>
+          <button className="active">Creo Dental Juárez</button>
         </div>
       </div>
 
       {/* GRID */}
-      <div key={fadeKey} className="reviews-grid fade-slide">
+      <div
+        key={fadeKey}
+        className="reviews-grid fade-slide"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         {currentReviews.map((review, index) => (
           <div className="review-card" key={index}>
-
             <div className="review-google-icon">
               <img src="/reviews/google-letra.svg" alt="Google logo" />
             </div>
@@ -80,15 +97,33 @@ function Reviews() {
       {/* PAGINACIÓN */}
       {totalPages > 1 && (
         <div className="reviews-pagination">
-          {Array.from({ length: totalPages }).map((_, i) => (
+
+          <button
+            className="page-arrow"
+            onClick={prevPage}
+            disabled={page === 1}
+          >
+            ‹
+          </button>
+
+          {getVisiblePages().map((n) => (
             <button
-              key={i}
-              className={`page-btn ${page === i + 1 ? "active" : ""}`}
-              onClick={() => changePage(i + 1)}
+              key={n}
+              className={`page-btn ${page === n ? "active" : ""}`}
+              onClick={() => changePage(n)}
             >
-              {i + 1}
+              {n}
             </button>
           ))}
+
+          <button
+            className="page-arrow"
+            onClick={nextPage}
+            disabled={page === totalPages}
+          >
+            ›
+          </button>
+
         </div>
       )}
     </section>
