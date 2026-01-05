@@ -31,7 +31,7 @@ function Navbar() {
         <div className="navbar-logo">
           <Link to="/">
             <img
-              src="https://res.cloudinary.com/dcerhiol0/image/upload/v1759950620/logo-white_peh5mv.png"
+              src="https://res.cloudinary.com/dcerhiol0/image/upload/v1767643773/WhatsApp_Image_2026-01-05_at_12.11.19_1_-Photoroom_zwyueq.png"
               alt="Logo Creo Dental"
               className="logo-img"
             />
