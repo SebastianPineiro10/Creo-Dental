@@ -1,142 +1,70 @@
+// src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useContext, Suspense } from "react";
+import { LanguageContext } from "./context/LanguageContext";
+
+// Componentes globales
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import WhatsappFloat from "./components/WhatsappFloat/WhatsappFloat";
+import PhoneFloat from "./components/PhoneCallButton/PhoneCallButton";
+import LanguageSwitchFloat from "./components/LanguageSwitchFloat/LanguageSwitchFloat";
+
+// Páginas ES
 import Home from "./pages/home/Home";
 import Services from "./pages/services/Services";
 import Contact from "./pages/contact/Contact";
-import WhatsappFloat from "./components/WhatsappFloat/WhatsappFloat.jsx";
-import PhoneFloat from "./components/PhoneCallButton/PhoneCallButton.jsx";
-import LanguageSwitchFloat from "./components/LanguageSwitchFloat/LanguageSwitchFloat.jsx";
-
-// Sucursales
 import SucursalJuarez from "./pages/sucursal-juarez/Juarez";
-// import SucursalAmericas from "./pages/sucursal-americas/Americas";
+import Especialistas from "./pages/especialistas/Especialistas";
+import Aseguranzas from "./pages/aseguranzas/aseguranzas";
 
-// Especialistas
-import Especialistas from "./pages/especialistas/Especialistas.jsx";
+// Páginas EN
+import HomeUsa from "./pages/home/HomeUsa";
+import ServicesUsa from "./pages/services/ServicesUsa";
+import ContactUsa from "./pages/contact/ContactUsa";
+import SucursalJuarezUsa from "./pages/sucursal-juarez/JuarezUsa";
+import EspecialistasUsa from "./pages/especialistas/EspecialistasUsa";
+import AseguranzasUsa from "./pages/aseguranzas/AseguranzasUsa";
 
-// Aseguranzas
-import Aseguranzas from "./pages/aseguranzas/aseguranzas.jsx";
+// Reviews (ES/EN)
+import Reviews from "./components/reviews/Reviews";
+import ReviewsUsa from "./components/reviews/ReviewsUsa";
 
-function MainLayout({ children }) {
+function AppContent() {
+  const { language } = useContext(LanguageContext);
+  const isSpanish = language === "es";
+
   return (
     <>
       <Navbar />
-      <main className="main-content">{children}</main>
+
+      <LanguageSwitchFloat />
+      <PhoneFloat phone="+19187439500" />
+      <WhatsappFloat phone="526563116130" />
+
+      <main className="main-content">
+        <Suspense fallback={<p>Cargando...</p>}>
+          <Routes>
+            <Route path="/" element={isSpanish ? <Home /> : <HomeUsa />} />
+            <Route path="/services" element={isSpanish ? <Services /> : <ServicesUsa />} />
+            <Route path="/contact" element={isSpanish ? <Contact /> : <ContactUsa />} />
+            <Route path="/sucursal/juarez" element={isSpanish ? <SucursalJuarez /> : <SucursalJuarezUsa />} />
+            <Route path="/especialistas" element={isSpanish ? <Especialistas /> : <EspecialistasUsa />} />
+            <Route path="/aseguranzas" element={isSpanish ? <Aseguranzas /> : <AseguranzasUsa />} />
+            <Route path="/reviews" element={isSpanish ? <Reviews /> : <ReviewsUsa />} />
+          </Routes>
+        </Suspense>
+      </main>
+
       <Footer />
     </>
   );
 }
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <Routes>
-        {/* HOME */}
-        <Route
-          path="/"
-          element={
-            <MainLayout>
-              <Home />
-              <LanguageSwitchFloat />
-              <PhoneFloat phone="+19187439500" />
-              <WhatsappFloat phone="526563116130" />
-            </MainLayout>
-          }
-        />
-
-        {/* SERVICIOS */}
-        <Route
-          path="/services"
-          element={
-            <MainLayout>
-              <Services />
-              <LanguageSwitchFloat />
-              <PhoneFloat phone="+19187439500" />
-              <WhatsappFloat phone="526563116130" />
-            </MainLayout>
-          }
-        />
-
-        {/* CONTACTO */}
-        <Route
-          path="/contact"
-          element={
-            <MainLayout>
-              <Contact />
-              <LanguageSwitchFloat />
-              <PhoneFloat phone="+19187439500" />
-              <WhatsappFloat phone="526563116130" />
-            </MainLayout>
-          }
-        />
-
-        {/* SUCURSAL JUÁREZ */}
-        <Route
-          path="/sucursal/juarez"
-          element={
-            <MainLayout>
-              <SucursalJuarez />
-              <LanguageSwitchFloat />
-              <PhoneFloat phone="+19187439500" />
-              <WhatsappFloat
-                phone="526563116130"
-                message="Hola, me interesa agendar cita en la sucursal Juárez."
-              />
-            </MainLayout>
-          }
-        />
-
-        {/* ESPECIALISTAS */}
-        <Route
-          path="/especialistas"
-          element={
-            <MainLayout>
-              <Especialistas />
-              <LanguageSwitchFloat />
-              <PhoneFloat phone="+19187439500" />
-              <WhatsappFloat
-                phone="526563116130"
-                message="Hola, me gustaría agendar una cita con un especialista."
-              />
-            </MainLayout>
-          }
-        />
-
-        {/* ASEGURANZAS */}
-        <Route
-          path="/aseguranzas"
-          element={
-            <MainLayout>
-              <Aseguranzas />
-              <LanguageSwitchFloat />
-              <PhoneFloat phone="+19187439500" />
-              <WhatsappFloat
-                phone="526563116130"
-                message="Hola, quisiera validar mi aseguranza dental."
-              />
-            </MainLayout>
-          }
-        />
-
-        {/* SUCURSAL AMÉRICAS (opcional) */}
-        {/* <Route
-          path="/sucursal/americas"
-          element={
-            <MainLayout>
-              <SucursalAmericas />
-              <LanguageSwitchFloat />
-              <PhoneFloat phone="+19187439500" />
-              <WhatsappFloat
-                phone="6564189051"
-                message="Hola, me interesa agendar cita en la sucursal Américas."
-              />
-            </MainLayout>
-          }
-        /> */}
-      </Routes>
+      <AppContent />
     </Router>
   );
 }
-
-export default App;

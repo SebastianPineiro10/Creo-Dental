@@ -1,3 +1,4 @@
+// src/components/FooterUsa.jsx
 import { useEffect, useRef } from "react";
 import "./footer.css";
 import { Facebook, Instagram, MessageCircle } from "lucide-react";
@@ -30,16 +31,16 @@ function FooterUsa() {
         <div className="footer-logo">
           <h2 className="brand-title">Creo Dental</h2>
           <p className="brand-subtitle">
-            Dental clinic specialized in aesthetic rehabilitation and personalized care.
+            Dental clinic specializing in aesthetic rehabilitation and personalized care.
           </p>
         </div>
 
         {/* NAVIGATION */}
         <div className="footer-links">
           <h3 className="footer-heading">Navigation</h3>
-          <a href="/">Home</a>
-          <a href="/services">Services</a>
-          <a href="/contact">Contact</a>
+          <a href="/home-us">Home</a>
+          <a href="/services-us">Services</a>
+          <a href="/contact-us">Contact</a>
         </div>
 
         {/* CONTACT */}
@@ -50,27 +51,13 @@ function FooterUsa() {
           <p>Email: creodental122@gmail.com</p>
 
           <div className="footer-socials">
-            <a
-              href="https://www.facebook.com/creodentalclinica"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.facebook.com/creodentalclinica" target="_blank" rel="noopener noreferrer">
               <Facebook size={22} strokeWidth={1.2} />
             </a>
-
-            <a
-              href="https://www.instagram.com/clinicacreodental/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.instagram.com/clinicacreodental/" target="_blank" rel="noopener noreferrer">
               <Instagram size={22} strokeWidth={1.2} />
             </a>
-
-            <a
-              href="https://wa.me/526563116130?text=Hello,%20I%20would%20like%20to%20schedule%20an%20appointment%20at%20Creo%20Dental"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://wa.me/526563116130?text=Hi,%20I'd%20like%20to%20book%20an%20appointment%20at%20Creo%20Dental" target="_blank" rel="noopener noreferrer">
               <MessageCircle size={22} strokeWidth={1.2} />
             </a>
           </div>
@@ -80,7 +67,7 @@ function FooterUsa() {
         <div className="footer-map">
           <h3 className="footer-heading">Location</h3>
           <iframe
-            title="Creo Dental Map"
+            title="Map Creo Dental"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.048885258822!2d-106.4853582!3d31.741866599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e759fbe8d183c5%3A0x61ff40393587918b!2sCREO%20Dental!5e0!3m2!1ses!2smx!4v1765671580622!5m2!1ses!2smx"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

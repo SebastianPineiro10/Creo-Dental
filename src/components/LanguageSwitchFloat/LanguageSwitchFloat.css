@@ -5,33 +5,51 @@
   z-index: 9999;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  animation: fadeInUp .35s ease;
+  gap: 10px;
+  animation: fadeInUp 0.4s ease;
 }
 
 .lang-btn {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.35);
-  background: rgba(0,0,0,.55);
-  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform .18s ease, box-shadow .18s ease;
+  transition: all 0.25s ease;
+  overflow: hidden;
 }
 
-.lang-btn img { width: 22px; height: 22px; }
+.lang-btn img {
+  width: 26px;
+  height: 26px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
 
-.lang-btn:hover,
+.lang-btn:hover {
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.35);
+}
+
 .lang-btn.active {
-  transform: scale(1.1);
-  box-shadow: 0 0 14px rgba(255,255,255,.45);
+  outline: 2px solid rgba(255, 255, 255, 0.65);
+  transform: scale(1.12);
 }
 
 @keyframes fadeInUp {
-  from { opacity:0; transform:translateY(10px); }
-  to { opacity:1; transform:translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,28 +1,27 @@
+// src/context/LanguageContext.jsx
 import { createContext, useContext, useEffect, useState } from "react";
-import { translations } from "../translations/translations";
 
-const LanguageContext = createContext();
+export const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
   const defaultLang = localStorage.getItem("lang") || "es";
-  const [lang, setLang] = useState(defaultLang);
+  const [language, setLanguage] = useState(defaultLang);
 
-  const changeLanguage = (code) => {
-    setLang(code);
-    localStorage.setItem("lang", code);
+  const changeLanguage = (lang) => {
+    setLanguage(lang);
+    localStorage.setItem("lang", lang);
   };
 
-  const t = (key) => translations[lang]?.[key] || key;
-
   useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
+    document.documentElement.lang = language;
+  }, [language]);
 
   return (
-    <LanguageContext.Provider value={{ lang, changeLanguage, t }}>
+    <LanguageContext.Provider value={{ language, changeLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
 }
 
+// ✅ Esta línea estaba faltando
 export const useLanguage = () => useContext(LanguageContext);

@@ -1,14 +1,13 @@
 // src/components/reviews/ReviewsUsa.jsx
 import { useState, useRef } from "react";
 import "./reviews.css";
-
-import { reviewsJuarez } from "./reviewsJuarez";
+import { reviewsJuarezUsa } from "./reviewsJuarezUsa";
 
 function ReviewsUsa() {
   const [page, setPage] = useState(1);
   const [fadeKey, setFadeKey] = useState(0);
 
-  const reviews = reviewsJuarez;
+  const reviews = reviewsJuarezUsa;
 
   const reviewsPerPage = 6;
   const totalPages = Math.ceil(reviews.length / reviewsPerPage);
@@ -53,16 +52,13 @@ function ReviewsUsa() {
 
   return (
     <section className="reviews-section">
-      {/* HEADER */}
       <div className="reviews-header">
         <h2 className="reviews-title">Google Reviews</h2>
-
         <div className="reviews-tabs">
           <button className="active">Creo Dental Juárez</button>
         </div>
       </div>
 
-      {/* GRID */}
       <div
         key={fadeKey}
         className="reviews-grid fade-slide"
@@ -77,9 +73,7 @@ function ReviewsUsa() {
 
             <div className="review-header">
               <h3>{review.name}</h3>
-              <span className="review-stars">
-                {"⭐".repeat(review.stars)}
-              </span>
+              <span className="review-stars">{"⭐".repeat(review.stars)}</span>
             </div>
 
             <p className="review-date">{review.date}</p>
@@ -88,17 +82,9 @@ function ReviewsUsa() {
         ))}
       </div>
 
-      {/* PAGINATION */}
       {totalPages > 1 && (
         <div className="reviews-pagination">
-
-          <button
-            className="page-arrow"
-            onClick={prevPage}
-            disabled={page === 1}
-          >
-            ‹
-          </button>
+          <button className="page-arrow" onClick={prevPage} disabled={page === 1}>‹</button>
 
           {getVisiblePages().map((n) => (
             <button
@@ -110,14 +96,7 @@ function ReviewsUsa() {
             </button>
           ))}
 
-          <button
-            className="page-arrow"
-            onClick={nextPage}
-            disabled={page === totalPages}
-          >
-            ›
-          </button>
-
+          <button className="page-arrow" onClick={nextPage} disabled={page === totalPages}>›</button>
         </div>
       )}
     </section>
